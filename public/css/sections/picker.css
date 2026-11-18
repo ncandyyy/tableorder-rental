@@ -59,7 +59,9 @@
   justify-content: center;
   gap: calc(10 * var(--bu));
   width: var(--card-w);
-  aspect-ratio: 610 / 318;
+  /* 높이를 고정해야 기기 사진이 카드 위로 튀어나옵니다 (aspect-ratio 는 내용만큼 늘어나서 안쪽에 갇힘) */
+  height: calc(var(--card-w) * 318 / 610);
+  overflow: visible;
   padding: 0 calc(24 * var(--bu));
   border: 1px solid #ececec;
   border-radius: 16px;
