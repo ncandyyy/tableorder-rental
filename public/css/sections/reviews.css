@@ -9,7 +9,7 @@
 
 .reviews__title {
   font-weight: 800;
-  font-size: max(24px, calc(48 * var(--u)));
+  font-size: var(--fs-h2);
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-align: center;
@@ -18,7 +18,7 @@
 .reviews__note {
   margin-top: calc(27 * var(--u));
   font-weight: 600;
-  font-size: max(11px, calc(16 * var(--u)));
+  font-size: var(--fs-small);
   color: rgb(255 255 255 / 0.5);
   text-align: center;
 }
@@ -52,7 +52,7 @@
 .review-card__stars {
   display: flex;
   gap: 13px;
-  font-size: max(13px, calc(16 * var(--u)));
+  font-size: var(--fs-small);
   color: #3f4a44;
 }
 
@@ -63,14 +63,14 @@
 
 .review-card__meta {
   margin-top: 7px;
-  font-size: max(12px, calc(16 * var(--u)));
+  font-size: var(--fs-small);
   color: var(--grey-600);
 }
 
 .review-card__text {
   margin-top: max(14px, calc(24 * var(--u)));
-  font-size: max(14px, calc(20 * var(--u)));
-  line-height: 1.25;
+  font-size: var(--fs-body);
+  line-height: 1.4;
   color: #0d1611;
 }
 

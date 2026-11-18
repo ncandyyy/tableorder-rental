@@ -15,7 +15,7 @@
 
 .picker__title {
   font-weight: 800;
-  font-size: max(24px, calc(48 * var(--u)));
+  font-size: var(--fs-h2);
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -24,7 +24,7 @@
 .picker__sub {
   margin-top: calc(37 * var(--u));
   font-weight: 600;
-  font-size: max(15px, calc(24 * var(--u)));
+  font-size: var(--fs-eyebrow);
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #404655;
@@ -156,7 +156,7 @@
 }
 
 .feat {
-  padding: calc(58 * var(--u)) 0 calc(91 * var(--u));
+  padding: calc(96 * var(--u)) 0 calc(132 * var(--u));
 }
 
 .feat:not([hidden]) {
@@ -176,7 +176,7 @@
 .feat__col {
   --fu: calc(100cqw / 613);
   container-type: inline-size;
-  width: min(calc(613 * var(--u)), 100% - 40px);
+  width: min(calc(613 * var(--u)), 100% - 48px);
   margin-inline: auto;
 }
 
@@ -273,11 +273,11 @@
 }
 
 .feat__desc {
-  min-height: 2.4em;
-  margin-top: calc(26 * var(--fu));
+  min-height: 2.6em;
+  margin-top: calc(36 * var(--fu));
   font-weight: 700;
   font-size: max(13.5px, calc(20 * var(--fu)));
-  line-height: 1.2;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   color: #fcfcfe;
 }
@@ -285,7 +285,7 @@
 .feat__media {
   --bu: var(--fu);
   position: relative;
-  margin-top: calc(48 * var(--fu));
+  margin-top: calc(44 * var(--fu));
   user-select: none;
   -webkit-user-select: none;
 }
@@ -312,7 +312,8 @@
   top: calc(var(--ty) * var(--fu));
   width: calc(var(--tw) * var(--fu));
   font-size: max(10px, calc(16 * var(--fu)));
-  box-shadow: 0 8px 20px rgb(0 0 0 / 0.18);
+  /* 그림자는 말풍선+꼬리 전체 모양에 (box-shadow 를 쓰면 꼬리와 사이에 선이 생김) */
+  filter: drop-shadow(0 6px 14px rgb(0 0 0 / 0.2));
   translate: 0 8px;
   opacity: 0;
   transition:
@@ -326,15 +327,86 @@
   transition-delay: 0.35s;
 }
 
+/* ---------- 휴대폰: 여백 넉넉하게, 글자는 후기 글과 비슷한 크기(14~15px) ---------- */
 @media (max-width: 599px) {
+  .picker__cards {
+    margin-top: 28px;
+    padding-top: 64px;
+  }
+
+  .features {
+    margin-top: 40px;
+  }
+
+  .feat {
+    padding: 52px 0 76px;
+  }
+
+  .feat__chips {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .feat__chip {
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  .feat__dots {
+    display: none;
+  }
+
+  .feat__desc {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
   .feat__desc .br-d {
     display: none;
   }
 
+  .feat__media {
+    margin-top: 24px;
+  }
+
+  .feat__viewport {
+    padding-bottom: 44px;
+    margin-bottom: -44px;
+  }
+
+  /* 말풍선은 사진 아래쪽 안에 맞춰 붙입니다 (화면 밖으로 잘리지 않게) */
   .feat__tip {
+    --bu: 0.6px;
+    top: auto;
+    bottom: -26px;
     width: max-content;
-    padding: 6px 10px;
+    max-width: 78%;
     min-height: 0;
-    border-radius: 12px;
+    padding: 9px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .feat__tip.bubble--tl {
+    left: auto;
+    right: 10px;
+  }
+
+  .feat__tip.bubble--tr {
+    left: 10px;
+  }
+
+  .feat__tip.bubble--tc {
+    left: 50%;
+    translate: -50% 8px;
+  }
+
+  .feat__slide.is-active .feat__tip.bubble--tc {
+    translate: -50% 0;
   }
 }

@@ -89,70 +89,73 @@
             <span class="hero__line hero__line--red" data-reveal style="--delay: 0.2s">테이블 오더</span>
           </h1>
 
-          <!-- 티오더 -->
-          <div class="hero__float" style="--bob: -0.4s">
-            <img class="at hero__device" style="--x: 78; --y: 511; --w: 440; --delay: 0.3s" data-reveal="left"
-              src="assets/images/hero/torder.webp" width="808" height="576" alt="티오더 태블릿" />
+          <!-- 티오더 (휴대폰에서는 제품마다 한 묶음으로 쌓입니다: css/sections/hero.css) -->
+          <div class="hero__product hero__product--torder">
+            <div class="hero__float" style="--bob: -0.4s">
+              <img class="at hero__device" style="--x: 78; --y: 511; --w: 440; --delay: 0.3s" data-reveal="left"
+                src="assets/images/hero/torder.webp" width="808" height="576" alt="티오더 태블릿" />
+            </div>
+            <span class="at hero__pill" style="--x: 402; --y: 471; --bg: rgb(255 25 63 / 0.7); --delay: 0.6s" data-reveal="pop">
+              글로벌 1위 <b>티오더</b>
+            </span>
+            <span class="at hero__pointer" style="--x: 440; --y: 605; --w: 68" data-reveal="fade" aria-hidden="true">
+              <img class="hero__pointer-dot" style="left: calc(-3 * var(--u))" src="assets/images/hero/dot-2.png" alt="" width="14" height="14" />
+              <img class="hero__pointer-line" src="assets/images/hero/line-right.svg" alt="" width="68" height="8" />
+            </span>
+            <div class="at hero__callout" style="--x: 512; --y: 564; --w: 187; --delay: 0.75s" data-reveal="pop">
+              <p>업계 1위의 기술력,<br /><em style="--c: #ff193f">테이블 오더계의 기본</em></p>
+              <img class="hero__callout-logo hero__callout-logo--torder" src="assets/images/logo-torder.webp" width="420" height="93" alt="티오더" />
+            </div>
           </div>
-          <span class="at hero__pill" style="--x: 402; --y: 471; --bg: rgb(255 25 63 / 0.7); --delay: 0.6s" data-reveal="pop">
-            글로벌 1위 <b>티오더</b>
-          </span>
 
           <!-- 하이오더 -->
-          <span class="at hero__shadow" style="--x: 91; --y: 819; --w: 429; --h: 133" aria-hidden="true"></span>
-          <span class="at hero__shadow" style="--x: 400; --y: 1017; --w: 344; --h: 114" aria-hidden="true"></span>
-          <div class="hero__float" style="--bob: -1.6s">
-            <img class="at hero__device" style="--x: 284; --y: 653; --w: 573; --delay: 0.45s" data-reveal="right"
-              src="assets/images/hero/hiorder.webp" width="550" height="400" alt="KT 하이오더 태블릿" />
-          </div>
-
-          <!-- 설명 말풍선 연결선 -->
-          <span class="at hero__pointer" style="--x: 440; --y: 605; --w: 68" data-reveal="fade" aria-hidden="true">
-            <img class="hero__pointer-dot" style="left: calc(-3 * var(--u))" src="assets/images/hero/dot-2.png" alt="" width="14" height="14" />
-            <img class="hero__pointer-line" src="assets/images/hero/line-right.svg" alt="" width="68" height="8" />
-          </span>
-          <span class="at hero__pointer" style="--x: 305; --y: 913; --w: 68" data-reveal="fade" aria-hidden="true">
-            <img class="hero__pointer-dot" style="left: calc(57 * var(--u))" src="assets/images/hero/dot-3.png" alt="" width="14" height="14" />
-            <img class="hero__pointer-line" src="assets/images/hero/line-left.svg" alt="" width="68" height="8" />
-          </span>
-
-          <div class="at hero__callout" style="--x: 512; --y: 564; --w: 187; --delay: 0.75s" data-reveal="pop">
-            <p>업계 1위의 기술력,<br /><em style="--c: #ff193f">테이블 오더계의 기본</em></p>
-            <img class="hero__callout-logo hero__callout-logo--torder" src="assets/images/logo-torder.webp" width="420" height="93" alt="티오더" />
-          </div>
-          <div class="at hero__callout" style="--x: 113; --y: 868; --w: 187; --delay: 0.9s" data-reveal="pop">
-            <p>KT가 직접 관리하는<br /><em style="--c: #fe2e36">든든한 사후 서비스</em></p>
-            <span class="hero__callout-brand hero__callout-brand--kt">
-              <img src="assets/images/logo-kt.webp" width="120" height="98" alt="KT" />하이오더
+          <div class="hero__product hero__product--hiorder">
+            <span class="at hero__shadow" style="--x: 91; --y: 819; --w: 429; --h: 133" aria-hidden="true"></span>
+            <span class="at hero__shadow" style="--x: 400; --y: 1017; --w: 344; --h: 114" aria-hidden="true"></span>
+            <div class="hero__float" style="--bob: -1.6s">
+              <img class="at hero__device" style="--x: 284; --y: 653; --w: 573; --delay: 0.45s" data-reveal="right"
+                src="assets/images/hero/hiorder.webp" width="550" height="400" alt="KT 하이오더 태블릿" />
+            </div>
+            <span class="at hero__pointer" style="--x: 305; --y: 913; --w: 68" data-reveal="fade" aria-hidden="true">
+              <img class="hero__pointer-dot" style="left: calc(57 * var(--u))" src="assets/images/hero/dot-3.png" alt="" width="14" height="14" />
+              <img class="hero__pointer-line" src="assets/images/hero/line-left.svg" alt="" width="68" height="8" />
+            </span>
+            <div class="at hero__callout" style="--x: 113; --y: 868; --w: 187; --delay: 0.9s" data-reveal="pop">
+              <p>KT가 직접 관리하는<br /><em style="--c: #fe2e36">든든한 사후 서비스</em></p>
+              <span class="hero__callout-brand hero__callout-brand--kt">
+                <img src="assets/images/logo-kt.webp" width="120" height="98" alt="KT" />하이오더
+              </span>
+            </div>
+            <span class="at hero__pill" style="--x: 454; --y: 1000; --bg: rgb(254 46 54 / 0.7); --delay: 0.7s" data-reveal="pop">
+              시장의 리더 <b>하이오더</b>
             </span>
           </div>
 
           <!-- 업오더 -->
-          <img class="at hero__brand" style="--x: 360.76; --y: 1523.6; --w: 128.24" src="assets/icons/paydv-wordmark.svg"
-            width="128" height="26" alt="PAYDV 페이앤밴" />
-          <div class="hero__float" style="--bob: -2.8s">
-            <img class="at hero__device" style="--x: 31; --y: 1010; --w: 652; --delay: 0.2s" data-reveal="left"
-              src="assets/images/hero/uporder.webp" width="1304" height="931" alt="업오더 태블릿" loading="lazy" />
-          </div>
-          <span class="at hero__pointer" style="--x: 448; --y: 1318; --w: 68" data-reveal="fade" aria-hidden="true">
-            <img class="hero__pointer-dot" style="left: calc(-3 * var(--u))" src="assets/images/hero/dot-4.png" alt="" width="14" height="14" />
-            <img class="hero__pointer-line" src="assets/images/hero/line-right-2.svg" alt="" width="68" height="8" />
-          </span>
-          <div class="at hero__callout" style="--x: 520; --y: 1277; --w: 187; --delay: 0.3s" data-reveal="pop">
-            <p>부담 없는 비용으로<br /><em style="--c: #da291c">필요한 기능만 실속 있게</em></p>
-            <span class="hero__callout-brand hero__callout-brand--imu">
-              <img src="assets/images/logo-imu.webp" width="240" height="118" alt="IMU" />UP오더
+          <div class="hero__product hero__product--uporder">
+            <div class="hero__float" style="--bob: -2.8s">
+              <img class="at hero__device" style="--x: 31; --y: 1010; --w: 652; --delay: 0.2s" data-reveal="left"
+                src="assets/images/hero/uporder.webp" width="1304" height="931" alt="업오더 태블릿" loading="lazy" />
+            </div>
+            <span class="at hero__pointer" style="--x: 448; --y: 1318; --w: 68" data-reveal="fade" aria-hidden="true">
+              <img class="hero__pointer-dot" style="left: calc(-3 * var(--u))" src="assets/images/hero/dot-4.png" alt="" width="14" height="14" />
+              <img class="hero__pointer-line" src="assets/images/hero/line-right-2.svg" alt="" width="68" height="8" />
             </span>
+            <div class="at hero__callout" style="--x: 520; --y: 1277; --w: 187; --delay: 0.3s" data-reveal="pop">
+              <p>부담 없는 비용으로<br /><em style="--c: #da291c">필요한 기능만 실속 있게</em></p>
+              <span class="hero__callout-brand hero__callout-brand--imu">
+                <img src="assets/images/logo-imu.webp" width="240" height="118" alt="IMU" />UP오더
+              </span>
+            </div>
+            <span class="at hero__pill" style="--x: 98; --y: 1352; --bg: rgb(218 41 28 / 0.7); --delay: 0.4s" data-reveal="pop">
+              합리적인 <b>업오더</b>
+            </span>
+            <img class="at hero__stand-shadow" style="--x: 194.3; --y: 1353.3; --w: 319.9" src="assets/images/hero/shadow.svg"
+              width="320" height="166" alt="" aria-hidden="true" />
           </div>
 
-          <span class="at hero__pill" style="--x: 454; --y: 1000; --bg: rgb(254 46 54 / 0.7); --delay: 0.7s" data-reveal="pop">
-            시장의 리더 <b>하이오더</b>
-          </span>
-          <span class="at hero__pill" style="--x: 98; --y: 1352; --bg: rgb(218 41 28 / 0.7); --delay: 0.4s" data-reveal="pop">
-            합리적인 <b>업오더</b>
-          </span>
-          <img class="at hero__stand-shadow" style="--x: 194.3; --y: 1353.3; --w: 319.9" src="assets/images/hero/shadow.svg"
-            width="320" height="166" alt="" aria-hidden="true" />
+          <img class="at hero__brand" style="--x: 360.76; --y: 1523.6; --w: 128.24" src="assets/icons/paydv-wordmark.svg"
+            width="128" height="26" alt="PAYDV 페이앤밴" />
         </div>
       </section>
 
@@ -162,10 +165,9 @@
           <div class="pain__head">
             <img class="pain__siren" src="assets/icons/emoji-siren.svg" width="55" height="56" alt="" data-reveal="pop" />
             <h2 class="pain__title" id="pain-title" data-reveal>
-              사장님, 혹시 오늘 하루도<br /><span class="pain__underline">이리저리 치이지 않으셨나요?</span>
+              <span class="pain__line">사장님, 혹시 오늘 하루도<img class="pain__emoji pain__emoji--swear" src="assets/icons/emoji-swear.svg" width="47" height="47" alt="" /></span>
+              <span class="pain__line"><img class="pain__emoji pain__emoji--facepalm" src="assets/icons/emoji-facepalm.svg" width="44" height="44" alt="" /><span class="pain__underline">이리저리 치이지 않으셨나요?</span></span>
             </h2>
-            <img class="pain__emoji pain__emoji--swear" src="assets/icons/emoji-swear.svg" width="47" height="47" alt="" data-reveal="pop" style="--delay: 0.35s" />
-            <img class="pain__emoji pain__emoji--facepalm" src="assets/icons/emoji-facepalm.svg" width="44" height="44" alt="" data-reveal="pop" style="--delay: 0.5s" />
           </div>
 
           <!-- 휴대폰에서는 옆으로 넘기는 카드 -->
@@ -225,8 +227,11 @@
           <p class="lineup__eyebrow" data-reveal>이제 부르지 않아도, 뛰지 않아도</p>
           <h2 class="lineup__title" id="lineup-title" data-reveal style="--delay: 0.1s">테이블오더로 완성하는 1인 홀</h2>
 
-          <div class="lineup__devices" data-reveal="pop">
-            <img src="assets/images/lineup/devices.webp" width="1238" height="640" alt="KT 하이오더, 티오더, 업오더 태블릿" loading="lazy" />
+          <!-- 기기 3대: 아래 탭에서 고른 제품만 컬러, 나머지는 흑백 (겹친 순서 = 피그마 순서) -->
+          <div class="lineup__devices" data-reveal="pop" data-lineup-devices data-active="hiorder" role="img" aria-label="KT 하이오더, 티오더, 업오더 태블릿">
+            <img class="lineup__device" data-device="hiorder" src="assets/images/lineup/device-hiorder.webp" width="1238" height="640" alt="" loading="lazy" />
+            <img class="lineup__device" data-device="torder" src="assets/images/lineup/device-torder.webp" width="1238" height="640" alt="" loading="lazy" />
+            <img class="lineup__device" data-device="uporder" src="assets/images/lineup/device-uporder.webp" width="1238" height="640" alt="" loading="lazy" />
           </div>
 
           <div class="lineup__tabs" role="tablist" aria-label="테이블오더 매장 사진" data-lineup-tabs>

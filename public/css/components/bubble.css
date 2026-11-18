@@ -32,7 +32,10 @@
   z-index: -1;
   width: var(--tail-w);
   height: var(--tail-h);
-  background: var(--tail) center / 100% 100% no-repeat;
+  /* SVG 는 모양(마스크)으로만 쓰고 색은 말풍선과 같은 색으로 칠해서 이음매가 안 보이게 */
+  background: var(--bubble-bg);
+  -webkit-mask: var(--tail) center / 100% 100% no-repeat;
+  mask: var(--tail) center / 100% 100% no-repeat;
   pointer-events: none;
 }
 

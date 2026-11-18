@@ -1,5 +1,6 @@
 /**
- * 02 테이블오더 3종 — 탭(KT 하이오더 / 티오더 / 업오더)을 누르면 아래 매장 사진 줄이 바뀝니다.
+ * 02 테이블오더 3종 — 탭(KT 하이오더 / 티오더 / 업오더)을 누르면 위 기기 사진에서 그 제품만 컬러가 되고
+ * 아래 매장 사진 줄이 바뀝니다.
  * 키보드: 좌우 화살표로 탭 이동
  */
 import { track } from "./analytics.js";
@@ -9,6 +10,7 @@ export function initLineupTabs() {
   if (!list) return;
   const tabs = [...list.querySelectorAll("[data-tab]")];
   const panels = [...document.querySelectorAll("[data-lineup-panel]")];
+  const devices = document.querySelector("[data-lineup-devices]");
 
   const select = (tab, focus = false) => {
     const id = tab.dataset.tab;
@@ -22,6 +24,7 @@ export function initLineupTabs() {
       p.hidden = !on;
       p.classList.toggle("is-active", on);
     });
+    if (devices) devices.dataset.active = id; // 고른 제품만 컬러
     if (focus) tab.focus();
     // 숨어 있던 사진 줄은 폭이 0 이라 흐름(marquee)을 다시 계산해야 합니다
     window.dispatchEvent(new Event("resize"));

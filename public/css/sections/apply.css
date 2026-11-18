@@ -9,7 +9,7 @@
 
 .apply__title {
   font-weight: 800;
-  font-size: max(26px, calc(48 * var(--u)));
+  font-size: var(--fs-h2);
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--ink);

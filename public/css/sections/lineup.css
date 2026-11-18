@@ -33,7 +33,7 @@
 
 .lineup__eyebrow {
   font-weight: 600;
-  font-size: max(16px, calc(31.28 * var(--u)));
+  font-size: max(15px, calc(31.28 * var(--u)));
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #778197;
@@ -43,7 +43,7 @@
   width: fit-content;
   margin: calc(12 * var(--u)) auto 0;
   font-weight: 800;
-  font-size: max(22px, calc(41.6 * var(--u)));
+  font-size: var(--fs-h2);
   line-height: 1.2;
   letter-spacing: -0.02em;
   background: linear-gradient(117.33deg, #ff193f 2.92%, #fe2e36 97.69%);
@@ -63,9 +63,29 @@
   background: #f3f4f6;
 }
 
-.lineup__devices img {
+.lineup__devices {
+  position: relative;
+}
+
+/* 3장이 같은 크기로 겹쳐 있어 한 장의 사진처럼 보입니다 */
+.lineup__device {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
   width: calc(619 * var(--u));
   height: auto;
+  translate: -50% 0;
+  transition:
+    filter 0.5s var(--ease-out),
+    opacity 0.5s var(--ease-out);
+}
+
+/* 고르지 않은 제품은 채도를 빼서 흑백으로 */
+.lineup__devices[data-active="hiorder"] .lineup__device:not([data-device="hiorder"]),
+.lineup__devices[data-active="torder"] .lineup__device:not([data-device="torder"]),
+.lineup__devices[data-active="uporder"] .lineup__device:not([data-device="uporder"]) {
+  /* 겹쳐 있어서 투명도는 주지 않고 채도만 뺍니다 */
+  filter: grayscale(1) contrast(0.9) brightness(1.04);
 }
 
 /* 탭 */
@@ -86,7 +106,7 @@
   border-radius: 999px;
   background: #f3f4f6;
   font-weight: 600;
-  font-size: max(14px, calc(20 * var(--u)));
+  font-size: var(--fs-chip);
   letter-spacing: -0.02em;
   color: #202632;
   transition:

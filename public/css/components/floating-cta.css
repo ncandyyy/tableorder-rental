@@ -31,8 +31,8 @@
   gap: 6px;
   height: 56px;
   border-radius: 16px;
-  background: var(--blue-500);
-  box-shadow: 0 8px 24px rgb(49 130 246 / 0.3);
+  background: var(--red);
+  box-shadow: 0 8px 24px rgb(254 46 54 / 0.32);
   font-weight: 700;
   font-size: 17px;
   letter-spacing: -0.02em;
@@ -43,7 +43,7 @@
 }
 
 .floating-cta__btn:hover {
-  background: var(--blue-600);
+  background: #e5262e;
 }
 
 .floating-cta__btn:active {
