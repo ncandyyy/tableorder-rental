@@ -1,0 +1,49 @@
+/**
+ * 사이트 설정 — 운영하면서 바꿀 값은 여기만 고치면 됩니다.
+ */
+export const CONFIG = {
+  /**
+   * 신청서를 받을 Google Apps Script 웹 앱 주소 (https://script.google.com/macros/s/.../exec)
+   * 토스 렌탈·네이버 커넥트·포스기 렌탈과 같은 시트·같은 주소를 씁니다. 신청은 PAGE_ID 로 구분돼 '테이블오더 신청목록' 탭에 따로 쌓입니다.
+   * 설정 방법: docs/form-setup.md  (Apps Script 의 PAGES 에 torder 가 추가된 새 버전이 배포되어야 테이블오더 탭·알림으로 갑니다.
+   *  그 전에는 토스 탭·토스 알림으로 들어가지만 신청이 빠지지는 않습니다)
+   * 비워두면 "테스트 모드"로 동작합니다 (화면 흐름만 확인, 실제 전송 안 됨).
+   */
+  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbwNtV2k8VgZqCxJ-uj7SxF0V_XyBKWrPEUNocFY6NQvfqbyBxF3R1pZ1aJ93N39L-S5/exec",
+
+  /** 이 페이지 이름표. 시트 탭·누적 조회수를 페이지별로 나눌 때 씁니다. (apps-script/Code.gs 의 PAGES 와 같은 값) */
+  PAGE_ID: "torder",
+
+  /** 신청할 테이블오더 선택지 (상담 신청 폼의 '어떤 테이블오더를 신청하시나요?') */
+  TABLE_ORDERS: ["업오더", "하이오더", "티오더"],
+
+  /** 업종 선택 목록 */
+  BUSINESS_TYPES: [
+    "음식점",
+    "카페 · 디저트",
+    "주점 · 호프",
+    "편의점 · 마트",
+    "도소매 · 쇼핑",
+    "뷰티 · 미용",
+    "병원 · 약국",
+    "학원 · 교육",
+    "숙박",
+    "서비스업",
+    "기타",
+  ],
+
+  /**
+   * 상담 쉬는 날 (주말은 자동으로 제외). 연락 희망일 선택지에서 빠집니다.
+   * 공휴일·회사 휴무일을 "YYYY-MM-DD" 로 추가하세요.
+   */
+  HOLIDAYS: ["2026-12-25", "2027-01-01"],
+
+  /** 연락 가능 시간 (24시간 기준). 화면에는 "오전 9시", "오후 13시"처럼 표시됩니다. */
+  CONTACT_HOURS: [9, 10, 11, 12, 13, 14, 15, 16, 17],
+
+  /** 04 기능 슬라이드 자동 넘김 간격 (ms) */
+  FEATURE_INTERVAL: 4500,
+
+  /** 시간 계산 기준 */
+  TIMEZONE: "Asia/Seoul",
+};

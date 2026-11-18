@@ -1,0 +1,340 @@
+/* =========================================================
+   04 제품 고르기
+   - 위: 제품 카드 3장 (업오더 · 티오더 · KT 하이오더). 가운데 온 카드가 선택됩니다.
+   - 아래: 고른 제품의 기능 슬라이드 3장 (진회색 띠)
+   카드 안쪽은 카드 폭(원본 610) 기준, 기능 슬라이드 안쪽은 내용 폭(원본 613) 기준으로 줄어듭니다.
+   ========================================================= */
+.picker {
+  background: #fff;
+}
+
+.picker .container {
+  padding-top: calc(134 * var(--u));
+  text-align: center;
+}
+
+.picker__title {
+  font-weight: 800;
+  font-size: max(24px, calc(48 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.picker__sub {
+  margin-top: calc(37 * var(--u));
+  font-weight: 600;
+  font-size: max(15px, calc(24 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #404655;
+}
+
+/* ---------- 제품 카드 줄 ---------- */
+.picker__cards {
+  --card-w: max(290px, calc(610 * var(--u)));
+  display: flex;
+  gap: calc(24 * var(--u));
+  /* 카드 위로 기기 사진이 튀어나와서 위쪽 여유를 둡니다 */
+  margin-top: calc(70 * var(--u));
+  padding: calc(100 * var(--u)) calc(50% - var(--card-w) / 2) 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.picker__cards::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  --bu: calc(100cqw / 610);
+  container-type: inline-size;
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: calc(10 * var(--bu));
+  width: var(--card-w);
+  aspect-ratio: 610 / 318;
+  padding: 0 calc(24 * var(--bu));
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  background: #fafafb;
+  scroll-snap-align: center;
+  cursor: pointer;
+  transition:
+    opacity 0.4s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.product-card[aria-selected="false"] {
+  opacity: 0.55;
+}
+
+.product-card[aria-selected="true"] {
+  border-color: #e2e4e8;
+  box-shadow: 0 10px 30px rgb(38 40 49 / 0.08);
+}
+
+.product-card:focus-visible {
+  outline-offset: 4px;
+}
+
+.product-card__img {
+  flex: none;
+  height: auto;
+  pointer-events: none;
+  transition: translate 0.5s var(--ease-spring);
+}
+
+.product-card[aria-selected="true"] .product-card__img {
+  translate: 0 calc(-6 * var(--bu));
+}
+
+.product-card--uporder .product-card__img {
+  width: calc(338 * var(--bu));
+}
+
+.product-card--torder .product-card__img {
+  width: calc(410 * var(--bu));
+}
+
+.product-card--hiorder .product-card__img {
+  width: calc(396 * var(--bu));
+}
+
+.product-card__logo {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  width: calc(140 * var(--bu));
+  padding: calc(24 * var(--bu)) 0;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.product-card__logo--torder img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card__logo--imu {
+  gap: calc(5.33 * var(--bu));
+  font-size: calc(22.07 * var(--bu));
+  color: #000;
+}
+
+.product-card__logo--imu img {
+  width: calc(67.5 * var(--bu));
+  height: auto;
+}
+
+.product-card__logo--kt {
+  justify-content: flex-end;
+  align-items: center;
+  gap: calc(2.32 * var(--bu));
+  font-size: calc(26.92 * var(--bu));
+  color: #6d6e72;
+}
+
+.product-card__logo--kt img {
+  width: calc(31.9 * var(--bu));
+  height: auto;
+}
+
+/* ---------- 기능 슬라이드 (진회색 띠) ---------- */
+.features {
+  margin-top: calc(62 * var(--u));
+  background: var(--ink);
+}
+
+.feat {
+  padding: calc(58 * var(--u)) 0 calc(91 * var(--u));
+}
+
+.feat:not([hidden]) {
+  animation: feat-in 0.5s var(--ease-out);
+}
+
+@keyframes feat-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.feat__col {
+  --fu: calc(100cqw / 613);
+  container-type: inline-size;
+  width: min(calc(613 * var(--u)), 100% - 40px);
+  margin-inline: auto;
+}
+
+/* 칩 3개 + 오른쪽 세로 점 */
+.feat__chips {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--fu));
+}
+
+.feat__chip {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: max(34px, calc(56 * var(--fu)));
+  padding: 0 max(12px, calc(24 * var(--fu)));
+  border-radius: max(10px, calc(16 * var(--fu)));
+  background: #f3f4f6;
+  font-weight: 700;
+  font-size: max(12.5px, calc(20 * var(--fu)));
+  letter-spacing: -0.02em;
+  color: var(--grey-600);
+  white-space: nowrap;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    scale 0.15s var(--ease-out);
+}
+
+.feat__chip:active {
+  scale: 0.96;
+}
+
+.feat__chip[aria-selected="true"] {
+  background: var(--brand);
+  color: #fff;
+}
+
+.feat__dots {
+  display: flex;
+  flex-direction: column;
+  gap: max(5px, calc(8 * var(--fu)));
+  width: max(5px, calc(8 * var(--fu)));
+  margin-left: auto;
+}
+
+.feat__dots i {
+  height: max(5px, calc(8 * var(--fu)));
+  border-radius: 999px;
+  background: #e5e8eb;
+  transition:
+    height 0.4s var(--ease-out),
+    background-color 0.3s;
+}
+
+.feat__dots i.is-active {
+  height: max(15px, calc(24 * var(--fu)));
+  background: #fff;
+}
+
+/* 슬라이드 */
+.feat__viewport {
+  overflow: hidden;
+  /* 아래로 튀어나온 말풍선이 잘리지 않게 */
+  padding-bottom: calc(60 * var(--fu));
+  margin-bottom: calc(-60 * var(--fu));
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.feat__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.feat__track {
+  display: flex;
+  transition: transform 0.6s var(--ease-out);
+  will-change: transform;
+}
+
+.feat__track.is-dragging {
+  transition: none;
+}
+
+.feat__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  transition: opacity 0.5s;
+}
+
+.feat__slide:not(.is-active) {
+  opacity: 0.35;
+}
+
+.feat__desc {
+  min-height: 2.4em;
+  margin-top: calc(26 * var(--fu));
+  font-weight: 700;
+  font-size: max(13.5px, calc(20 * var(--fu)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fcfcfe;
+}
+
+.feat__media {
+  --bu: var(--fu);
+  position: relative;
+  margin-top: calc(48 * var(--fu));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.feat__media img,
+.feat__media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 613 / 328;
+  border-radius: calc(16 * var(--fu));
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.feat__media img {
+  object-fit: contain;
+}
+
+.feat__tip {
+  position: absolute;
+  left: calc(var(--tx) * var(--fu));
+  top: calc(var(--ty) * var(--fu));
+  width: calc(var(--tw) * var(--fu));
+  font-size: max(10px, calc(16 * var(--fu)));
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.18);
+  translate: 0 8px;
+  opacity: 0;
+  transition:
+    opacity 0.4s var(--ease-out),
+    translate 0.5s var(--ease-spring);
+}
+
+.feat__slide.is-active .feat__tip {
+  opacity: 1;
+  translate: none;
+  transition-delay: 0.35s;
+}
+
+@media (max-width: 599px) {
+  .feat__desc .br-d {
+    display: none;
+  }
+
+  .feat__tip {
+    width: max-content;
+    padding: 6px 10px;
+    min-height: 0;
+    border-radius: 12px;
+  }
+}

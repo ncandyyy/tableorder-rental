@@ -1,0 +1,225 @@
+/* =========================================================
+   00 히어로 — 피그마(860 × 1660) 좌표 그대로 배치
+   .at 요소의 --x / --y / --w 는 디자인 px 입니다 (css/base/base.css)
+   ========================================================= */
+.hero {
+  background: #fcfcfe;
+}
+
+.hero__stage {
+  height: calc(1660 * var(--u));
+}
+
+.hero__eyebrow {
+  position: absolute;
+  top: calc(132 * var(--u));
+  left: 0;
+  right: 0;
+  font-weight: 600;
+  font-size: max(15px, calc(32 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: rgb(38 40 49 / 0.6);
+  text-align: center;
+}
+
+.hero__title {
+  position: absolute;
+  top: calc(201 * var(--u));
+  left: calc(140 * var(--u));
+  font-weight: 900;
+  font-size: calc(94.53 * var(--u));
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__line--red {
+  width: fit-content;
+  background: linear-gradient(100.26deg, #ff193f 5.09%, #fe2e36 75.05%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__device {
+  height: auto;
+}
+
+/* 기기가 둥실둥실 */
+.hero__float {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: hero-bob 5.5s var(--ease-in-out) infinite;
+  animation-delay: var(--bob, 0s);
+}
+
+@keyframes hero-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 calc(-8 * var(--u));
+  }
+}
+
+/* 기기 아래 그림자 */
+.hero__shadow {
+  height: calc(var(--h) * var(--u));
+  background: linear-gradient(to bottom, rgb(38 40 49 / 0.3), rgb(38 40 49 / 0));
+  filter: blur(calc(16.1 * var(--u)));
+  mix-blend-mode: multiply;
+}
+
+.hero__stand-shadow {
+  height: auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* 빨간 알약 라벨 */
+.hero__pill {
+  width: auto;
+  padding: calc(16 * var(--u)) calc(24 * var(--u));
+  border-radius: 999px;
+  background: var(--bg);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  font-weight: 600;
+  font-size: max(12px, calc(24 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 calc(8 * var(--u)) calc(24 * var(--u)) rgb(254 46 54 / 0.18);
+}
+
+.hero__pill b {
+  font-weight: 800;
+}
+
+/* 점 + 선 */
+.hero__pointer {
+  height: calc(14 * var(--u));
+}
+
+.hero__pointer-dot {
+  position: absolute;
+  top: 0;
+  width: calc(14 * var(--u));
+  height: calc(14 * var(--u));
+}
+
+.hero__pointer-line {
+  position: absolute;
+  left: 0;
+  top: calc(3 * var(--u));
+  width: 100%;
+  height: calc(8 * var(--u));
+}
+
+/* 설명 카드 (반투명 유리) */
+.hero__callout {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 * var(--u));
+  padding: calc(16 * var(--u));
+  border-radius: calc(16 * var(--u));
+  background: rgb(255 255 255 / 0.55);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 calc(6 * var(--u)) calc(24 * var(--u)) rgb(38 40 49 / 0.08);
+  font-weight: 700;
+  font-size: max(9px, calc(15 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero__callout em {
+  font-style: normal;
+  color: var(--c);
+}
+
+.hero__callout-logo--torder {
+  width: calc(95 * var(--u));
+  height: auto;
+}
+
+.hero__callout-brand {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hero__callout-brand--kt {
+  gap: calc(2 * var(--u));
+  font-size: calc(23.17 * var(--u));
+  color: #6d6e72;
+}
+
+.hero__callout-brand--kt img {
+  width: calc(27.45 * var(--u));
+  height: auto;
+}
+
+.hero__callout-brand--imu {
+  align-items: flex-end;
+  gap: calc(4 * var(--u));
+  font-size: calc(16.55 * var(--u));
+  color: #000;
+}
+
+.hero__callout-brand--imu img {
+  width: calc(51 * var(--u));
+  height: auto;
+}
+
+.hero__brand {
+  height: auto;
+}
+
+/* 휴대폰: 작은 설명 카드가 읽히도록 살짝 키우고 기기 쪽으로 붙입니다 */
+@media (max-width: 599px) {
+  .hero__callout {
+    width: auto;
+    min-width: calc(187 * var(--u));
+    padding: 8px;
+    border-radius: 10px;
+    gap: 4px;
+  }
+
+  .hero__callout-logo--torder {
+    width: 56px;
+  }
+
+  .hero__callout-brand--kt {
+    font-size: 13px;
+  }
+
+  .hero__callout-brand--kt img {
+    width: 16px;
+  }
+
+  .hero__callout-brand--imu {
+    font-size: 11px;
+  }
+
+  .hero__callout-brand--imu img {
+    width: 32px;
+  }
+
+  .hero__pill {
+    padding: 7px 12px;
+  }
+}

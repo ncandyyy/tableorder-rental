@@ -1,0 +1,139 @@
+/* =========================================================
+   02 테이블오더 3종 — 위쪽 갈색 띠 + 가운데 홈(notch), 기기 사진, 탭, 매장 사진 흐름
+   ========================================================= */
+.lineup {
+  background: #fff;
+  padding-bottom: calc(79 * var(--u));
+}
+
+/* 앞 섹션 갈색이 이어지는 띠 (피그마 Union: 위 69px + 가운데 아래로 볼록) */
+.lineup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(69 * var(--u));
+  background: #634a4a;
+}
+
+.lineup__notch {
+  position: absolute;
+  left: 50%;
+  top: calc(69 * var(--u) - 0.5px);
+  width: calc(96 * var(--u));
+  height: auto;
+  translate: -50% 0;
+}
+
+.lineup .container {
+  padding-top: calc(176 * var(--u));
+  text-align: center;
+}
+
+.lineup__eyebrow {
+  font-weight: 600;
+  font-size: max(16px, calc(31.28 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #778197;
+}
+
+.lineup__title {
+  width: fit-content;
+  margin: calc(12 * var(--u)) auto 0;
+  font-weight: 800;
+  font-size: max(22px, calc(41.6 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: linear-gradient(117.33deg, #ff193f 2.92%, #fe2e36 97.69%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lineup__devices {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: calc(729 * var(--u));
+  height: calc(339 * var(--u));
+  margin: calc(80 * var(--u)) auto 0;
+  border-radius: calc(24 * var(--u));
+  background: #f3f4f6;
+}
+
+.lineup__devices img {
+  width: calc(619 * var(--u));
+  height: auto;
+}
+
+/* 탭 */
+.lineup__tabs {
+  display: flex;
+  justify-content: center;
+  gap: calc(15 * var(--u));
+  margin-top: calc(32 * var(--u));
+}
+
+.lineup__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(178.4 * var(--u));
+  min-width: 96px;
+  height: max(40px, calc(53.9 * var(--u)));
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-weight: 600;
+  font-size: max(14px, calc(20 * var(--u)));
+  letter-spacing: -0.02em;
+  color: #202632;
+  transition:
+    background-color 0.25s,
+    color 0.25s,
+    scale 0.15s var(--ease-out);
+}
+
+.lineup__tab:active {
+  scale: 0.96;
+}
+
+.lineup__tab[aria-selected="true"] {
+  background: var(--red);
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 6px 16px rgb(254 46 54 / 0.25);
+}
+
+/* 매장 사진 */
+.lineup__photos {
+  margin-top: calc(80 * var(--u));
+}
+
+.lineup__panel.is-active {
+  animation: lineup-in 0.5s var(--ease-out);
+}
+
+@keyframes lineup-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.lineup .marquee {
+  --gap: calc(14 * var(--u));
+}
+
+.lineup__photo {
+  width: calc(586 * var(--u));
+  min-width: 260px;
+  aspect-ratio: 586 / 321;
+  height: auto;
+  border-radius: calc(20 * var(--u));
+  object-fit: cover;
+}

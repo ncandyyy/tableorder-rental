@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>페이앤밴 테이블오더 렌탈 | 티오더 · KT 하이오더 · 업오더 비교 상담</title>
+    <meta
+      name="description"
+      content="혼자서도 완벽한 테이블 오더. 글로벌 1위 티오더, 시장의 리더 KT 하이오더, 합리적인 업오더까지 제품별 특징을 비교하고 우리 매장에 딱 맞는 테이블오더를 상담받아보세요."
+    />
+    <meta name="theme-color" content="#262831" />
+    <link rel="canonical" href="https://tableorder-rental.netlify.app/" />
+
+    <!-- 공유 미리보기 (카카오톡/페이스북 등). 도메인을 바꾸면 아래 주소 3곳(canonical, og:url, og:image)을 함께 바꿔주세요.
+         미리보기 이미지를 교체하면 ?v= 숫자를 올려야 카카오톡 등이 예전 이미지 대신 새 이미지를 가져갑니다. -->
+    <meta property="og:url" content="https://tableorder-rental.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="페이앤밴" />
+    <meta property="og:title" content="혼자서도 완벽한 테이블 오더 | 페이앤밴 테이블오더 렌탈" />
+    <meta property="og:description" content="티오더 · KT 하이오더 · 업오더, 제품별 특징 비교하고 딱 맞는 기기로 골라요" />
+    <meta property="og:image" content="https://tableorder-rental.netlify.app/assets/images/og/og-image.png?v=1" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="혼자서도 완벽한 테이블 오더 — 티오더, KT 하이오더, 업오더" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://tableorder-rental.netlify.app/assets/images/og/og-image.png?v=1" />
+
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+
+    <!-- 폰트: Pretendard (가변, 필요한 글자만 내려받는 dynamic subset) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+
+    <!-- 첫 화면 이미지 미리 받기 -->
+    <link rel="preload" as="image" href="assets/images/hero/hiorder.webp" fetchpriority="high" />
+
+    <!-- JS가 켜져 있으면 등장 애니메이션을 위해 .js 클래스를 붙입니다 -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <!-- styles: base → components → sections -->
+    <link rel="stylesheet" href="css/base/tokens.css" />
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/base.css" />
+    <link rel="stylesheet" href="css/components/marquee.css" />
+    <link rel="stylesheet" href="css/components/bubble.css" />
+    <link rel="stylesheet" href="css/components/form.css" />
+    <link rel="stylesheet" href="css/components/floating-cta.css" />
+    <link rel="stylesheet" href="css/components/sheet.css" />
+    <link rel="stylesheet" href="css/sections/topbar.css" />
+    <link rel="stylesheet" href="css/sections/hero.css" />
+    <link rel="stylesheet" href="css/sections/pain.css" />
+    <link rel="stylesheet" href="css/sections/lineup.css" />
+    <link rel="stylesheet" href="css/sections/reviews.css" />
+    <link rel="stylesheet" href="css/sections/picker.css" />
+    <link rel="stylesheet" href="css/sections/apply.css" />
+    <link rel="stylesheet" href="css/sections/footer.css" />
+
+    <script type="module" src="js/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#apply">상담 신청 바로가기</a>
+
+    <!-- ===================== 상단 플로팅 바 ===================== -->
+    <header class="topbar">
+      <div class="topbar__inner">
+        <!-- 누적 조회수: js/modules/view-counter.js 가 Apps Script 에서 받아와 표시합니다 -->
+        <p class="topbar__text" data-view-text>
+          지금 <strong class="topbar__count"><span data-view-count>0</span>명</strong>의 사장님이 관심있게 보고 있어요
+        </p>
+        <img class="topbar__fire" src="assets/icons/fire.svg" alt="" width="30" height="30" />
+      </div>
+    </header>
+
+    <main>
+      <!-- ===================== 00 히어로 =====================
+           피그마 좌표 그대로 배치하는 무대: --x / --y / --w 는 디자인 px (860 기준) -->
+      <section class="hero section" id="hero" aria-labelledby="hero-title">
+        <div class="container hero__stage stage">
+          <p class="hero__eyebrow" data-reveal>일손 걱정을 내려놓는 든든한 일등 공신</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line" data-reveal style="--delay: 0.1s">혼자서도 완벽한</span>
+            <span class="hero__line hero__line--red" data-reveal style="--delay: 0.2s">테이블 오더</span>
+          </h1>
+
+          <!-- 티오더 -->
+          <div class="hero__float" style="--bob: -0.4s">
+            <img class="at hero__device" style="--x: 78; --y: 511; --w: 440; --delay: 0.3s" data-reveal="left"
+              src="assets/images/hero/torder.webp" width="808" height="576" alt="티오더 태블릿" />
+          </div>
+          <span class="at hero__pill" style="--x: 402; --y: 471; --bg: rgb(255 25 63 / 0.7); --delay: 0.6s" data-reveal="pop">
+            글로벌 1위 <b>티오더</b>
+          </span>
+
+          <!-- 하이오더 -->
+          <span class="at hero__shadow" style="--x: 91; --y: 819; --w: 429; --h: 133" aria-hidden="true"></span>
+          <span class="at hero__shadow" style="--x: 400; --y: 1017; --w: 344; --h: 114" aria-hidden="true"></span>
+          <div class="hero__float" style="--bob: -1.6s">
+            <img class="at hero__device" style="--x: 284; --y: 653; --w: 573; --delay: 0.45s" data-reveal="right"
+              src="assets/images/hero/hiorder.webp" width="550" height="400" alt="KT 하이오더 태블릿" />
+          </div>
+
+          <!-- 설명 말풍선 연결선 -->
+          <span class="at hero__pointer" style="--x: 440; --y: 605; --w: 68" data-reveal="fade" aria-hidden="true">
+            <img class="hero__pointer-dot" style="left: calc(-3 * var(--u))" src="assets/images/hero/dot-2.png" alt="" width="14" height="14" />
+            <img class="hero__pointer-line" src="assets/images/hero/line-right.svg" alt="" width="68" height="8" />
+          </span>
+          <span class="at hero__pointer" style="--x: 305; --y: 913; --w: 68" data-reveal="fade" aria-hidden="true">
+            <img class="hero__pointer-dot" style="left: calc(57 * var(--u))" src="assets/images/hero/dot-3.png" alt="" width="14" height="14" />
+            <img class="hero__pointer-line" src="assets/images/hero/line-left.svg" alt="" width="68" height="8" />
+          </span>
+
+          <div class="at hero__callout" style="--x: 512; --y: 564; --w: 187; --delay: 0.75s" data-reveal="pop">
+            <p>업계 1위의 기술력,<br /><em style="--c: #ff193f">테이블 오더계의 기본</em></p>
+            <img class="hero__callout-logo hero__callout-logo--torder" src="assets/images/logo-torder.webp" width="420" height="93" alt="티오더" />
+          </div>
+          <div class="at hero__callout" style="--x: 113; --y: 868; --w: 187; --delay: 0.9s" data-reveal="pop">
+            <p>KT가 직접 관리하는<br /><em style="--c: #fe2e36">든든한 사후 서비스</em></p>
+            <span class="hero__callout-brand hero__callout-brand--kt">
+              <img src="assets/images/logo-kt.webp" width="120" height="98" alt="KT" />하이오더
+            </span>
+          </div>
+
+          <!-- 업오더 -->
+          <img class="at hero__brand" style="--x: 360.76; --y: 1523.6; --w: 128.24" src="assets/icons/paydv-wordmark.svg"
+            width="128" height="26" alt="PAYDV 페이앤밴" />
+          <div class="hero__float" style="--bob: -2.8s">
+            <img class="at hero__device" style="--x: 31; --y: 1010; --w: 652; --delay: 0.2s" data-reveal="left"
+              src="assets/images/hero/uporder.webp" width="1304" height="931" alt="업오더 태블릿" loading="lazy" />
+          </div>
+          <span class="at hero__pointer" style="--x: 448; --y: 1318; --w: 68" data-reveal="fade" aria-hidden="true">
+            <img class="hero__pointer-dot" style="left: calc(-3 * var(--u))" src="assets/images/hero/dot-4.png" alt="" width="14" height="14" />
+            <img class="hero__pointer-line" src="assets/images/hero/line-right-2.svg" alt="" width="68" height="8" />
+          </span>
+          <div class="at hero__callout" style="--x: 520; --y: 1277; --w: 187; --delay: 0.3s" data-reveal="pop">
+            <p>부담 없는 비용으로<br /><em style="--c: #da291c">필요한 기능만 실속 있게</em></p>
+            <span class="hero__callout-brand hero__callout-brand--imu">
+              <img src="assets/images/logo-imu.webp" width="240" height="118" alt="IMU" />UP오더
+            </span>
+          </div>
+
+          <span class="at hero__pill" style="--x: 454; --y: 1000; --bg: rgb(254 46 54 / 0.7); --delay: 0.7s" data-reveal="pop">
+            시장의 리더 <b>하이오더</b>
+          </span>
+          <span class="at hero__pill" style="--x: 98; --y: 1352; --bg: rgb(218 41 28 / 0.7); --delay: 0.4s" data-reveal="pop">
+            합리적인 <b>업오더</b>
+          </span>
+          <img class="at hero__stand-shadow" style="--x: 194.3; --y: 1353.3; --w: 319.9" src="assets/images/hero/shadow.svg"
+            width="320" height="166" alt="" aria-hidden="true" />
+        </div>
+      </section>
+
+      <!-- ===================== 01 문제 공감 ===================== -->
+      <section class="pain section" aria-labelledby="pain-title">
+        <div class="container">
+          <div class="pain__head">
+            <img class="pain__siren" src="assets/icons/emoji-siren.svg" width="55" height="56" alt="" data-reveal="pop" />
+            <h2 class="pain__title" id="pain-title" data-reveal>
+              사장님, 혹시 오늘 하루도<br /><span class="pain__underline">이리저리 치이지 않으셨나요?</span>
+            </h2>
+            <img class="pain__emoji pain__emoji--swear" src="assets/icons/emoji-swear.svg" width="47" height="47" alt="" data-reveal="pop" style="--delay: 0.35s" />
+            <img class="pain__emoji pain__emoji--facepalm" src="assets/icons/emoji-facepalm.svg" width="44" height="44" alt="" data-reveal="pop" style="--delay: 0.5s" />
+          </div>
+
+          <!-- 휴대폰에서는 옆으로 넘기는 카드 -->
+          <ul class="pain__grid">
+            <li class="pain-card" style="--img-x: -3.59%; --img-y: 16.76%; --img-w: 106.99%; --fade: 27.7%, 72.85%" data-reveal>
+              <img class="pain-card__bg" src="assets/images/pain/card-1.webp" width="760" height="760" alt="" loading="lazy" />
+              <div class="pain-card__text">
+                <h3>주문 실수</h3>
+                <p>정신없는 피크타임<br />여기 저기서 하는 말</p>
+              </div>
+              <div class="pain-card__talk" style="--talk-w: auto">
+                <p class="bubble bubble--dark bubble--bl">저 양념 시켰는데요?</p>
+                <p class="bubble bubble--dark bubble--br" style="--bw: 241">음료가 아직 안 나왔어요</p>
+              </div>
+            </li>
+            <li class="pain-card" style="--img-x: -8.22%; --img-y: 10.31%; --img-w: 116.43%; --fade: 28.7%, 58.5%; --delay: 0.1s" data-reveal>
+              <img class="pain-card__bg" src="assets/images/pain/card-2.webp" width="760" height="760" alt="" loading="lazy" />
+              <div class="pain-card__text">
+                <h3>체력 방전</h3>
+                <p>홀 혼자 보느라 중요한<br />주방 일과 응대 서비스는...</p>
+              </div>
+              <div class="pain-card__talk" style="--talk-w: 259">
+                <p class="bubble bubble--dark bubble--bl">직원을 한 명 더 써야하나...</p>
+                <p class="bubble bubble--dark bubble--br bubble--full">요즘 인건비도 너무 비싼데...</p>
+              </div>
+            </li>
+            <li class="pain-card" style="--img-x: -6.78%; --img-y: 12%; --img-w: 113.01%; --fade: 29.36%, 62.69%" data-reveal>
+              <img class="pain-card__bg" src="assets/images/pain/card-3.webp" width="760" height="760" alt="" loading="lazy" />
+              <div class="pain-card__text">
+                <h3>동선 꼬임</h3>
+                <p>여기요! 부르는 소리에<br />헐레벌떡 뛰어갔더니</p>
+              </div>
+              <div class="pain-card__talk pain-card__talk--end" style="--talk-w: auto">
+                <p class="bubble bubble--dark bubble--bl" style="--bw: 265">잠시만요 메뉴 다시 좀 볼게요</p>
+                <p class="bubble bubble--dark bubble--br">여기 계산 좀 해주세요!</p>
+              </div>
+            </li>
+            <li class="pain-card" style="--img-x: -14.36%; --img-y: 11.64%; --img-w: 118.7%; --fade: 32.34%, 58.5%; --delay: 0.1s" data-reveal>
+              <img class="pain-card__bg" src="assets/images/pain/card-4.webp" width="760" height="760" alt="" loading="lazy" />
+              <div class="pain-card__text">
+                <h3>손님 이탈</h3>
+                <p>바빠서 눈 마주치기 힘들 때,<br />기다리다 지친 손님들</p>
+              </div>
+              <div class="pain-card__talk pain-card__talk--end" style="--talk-w: 252">
+                <p class="bubble bubble--dark bubble--bl bubble--full">언제 나와요? 그냥 나갈까...</p>
+                <p class="bubble bubble--dark bubble--br">주문하려고 한참 기다렸네</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== 02 테이블오더 3종 ===================== -->
+      <section class="lineup section" aria-labelledby="lineup-title">
+        <img class="lineup__notch" src="assets/images/lineup/notch.svg" width="96" height="48" alt="" aria-hidden="true" />
+        <div class="container">
+          <p class="lineup__eyebrow" data-reveal>이제 부르지 않아도, 뛰지 않아도</p>
+          <h2 class="lineup__title" id="lineup-title" data-reveal style="--delay: 0.1s">테이블오더로 완성하는 1인 홀</h2>
+
+          <div class="lineup__devices" data-reveal="pop">
+            <img src="assets/images/lineup/devices.webp" width="1238" height="640" alt="KT 하이오더, 티오더, 업오더 태블릿" loading="lazy" />
+          </div>
+
+          <div class="lineup__tabs" role="tablist" aria-label="테이블오더 매장 사진" data-lineup-tabs>
+            <button class="lineup__tab" type="button" role="tab" aria-selected="true" aria-controls="lineup-hiorder" data-tab="hiorder">KT 하이오더</button>
+            <button class="lineup__tab" type="button" role="tab" aria-selected="false" aria-controls="lineup-torder" data-tab="torder">티오더</button>
+            <button class="lineup__tab" type="button" role="tab" aria-selected="false" aria-controls="lineup-uporder" data-tab="uporder">업오더</button>
+          </div>
+        </div>
+
+        <!-- 매장 설치 사진: 탭마다 한 줄씩, 자동으로 흐릅니다 -->
+        <div class="lineup__photos">
+          <div class="lineup__panel is-active" id="lineup-hiorder" role="tabpanel" aria-label="KT 하이오더 설치 매장" data-lineup-panel="hiorder">
+            <div class="marquee" data-marquee data-speed="42" data-hover-pause>
+              <ul class="marquee__track">
+                <li><img class="lineup__photo" src="assets/images/lineup/hiorder-1.webp" width="1172" height="642" alt="KT 하이오더 설치 매장 1" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/hiorder-2.webp" width="1172" height="642" alt="KT 하이오더 설치 매장 2" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/hiorder-3.webp" width="1172" height="642" alt="KT 하이오더 설치 매장 3" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/hiorder-4.webp" width="1172" height="642" alt="KT 하이오더 설치 매장 4" loading="lazy" /></li>
+              </ul>
+            </div>
+          </div>
+          <div class="lineup__panel" id="lineup-torder" role="tabpanel" aria-label="티오더 설치 매장" data-lineup-panel="torder" hidden>
+            <div class="marquee" data-marquee data-speed="42" data-hover-pause>
+              <ul class="marquee__track">
+                <li><img class="lineup__photo" src="assets/images/lineup/torder-1.webp" width="1172" height="642" alt="티오더 설치 매장 1" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/torder-2.webp" width="1172" height="642" alt="티오더 설치 매장 2" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/torder-3.webp" width="1172" height="642" alt="티오더 설치 매장 3" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/torder-4.webp" width="1172" height="642" alt="티오더 설치 매장 4" loading="lazy" /></li>
+              </ul>
+            </div>
+          </div>
+          <div class="lineup__panel" id="lineup-uporder" role="tabpanel" aria-label="업오더 설치 매장" data-lineup-panel="uporder" hidden>
+            <div class="marquee" data-marquee data-speed="42" data-hover-pause>
+              <ul class="marquee__track">
+                <li><img class="lineup__photo" src="assets/images/lineup/uporder-1.webp" width="1172" height="642" alt="업오더 설치 매장 1" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/uporder-2.webp" width="1172" height="642" alt="업오더 설치 매장 2" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/uporder-3.webp" width="1172" height="642" alt="업오더 설치 매장 3" loading="lazy" /></li>
+                <li><img class="lineup__photo" src="assets/images/lineup/uporder-4.webp" width="1172" height="642" alt="업오더 설치 매장 4" loading="lazy" /></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 03 후기 ===================== -->
+      <section class="reviews section" aria-labelledby="reviews-title">
+        <div class="container">
+          <h2 class="reviews__title" id="reviews-title" data-reveal>
+            <span class="text-red">매달 <span data-count-up="1000">1,000</span>명의 대표님</span>들과<br />상담 하고 있으니 믿을 수 있어요
+          </h2>
+          <p class="reviews__note" data-reveal style="--delay: 0.1s">※25.10월 ~26.10월 월평균 상담 건수 기준</p>
+        </div>
+
+        <div class="reviews__rows">
+          <div class="marquee reviews__row" data-marquee data-direction="left" data-speed="36" data-hover-pause>
+            <ul class="marquee__track">
+              <li class="review-card">
+                <p class="review-card__stars"><span aria-label="별점 5점">★★★★★</span><span>5.0</span></p>
+                <p class="review-card__meta">스마트 스토어 주문 | njhf***</p>
+                <p class="review-card__text">사용한지 벌써 2주가 지난 뒤 리뷰를 남깁니다.<br />일단 사용 전 톡톡으로 친절한 설명이 제일 기억에 남아요.</p>
+              </li>
+              <li class="review-card">
+                <p class="review-card__stars"><span aria-label="별점 5점">★★★★★</span><span>5.0</span></p>
+                <p class="review-card__meta">스마트 스토어 주문 | jiya*****</p>
+                <p class="review-card__text">여기서 하길 너무 잘했어요.<br />처음 자영업하는 거라 아무것도 모르는 백지상태 였는데,<br />피드백도 진짜 빠르고 너무너무너무 친절하세요...!</p>
+              </li>
+              <li class="review-card">
+                <p class="review-card__stars"><span aria-label="별점 5점">★★★★★</span><span>5.0</span></p>
+                <p class="review-card__meta">스마트 스토어 주문 | 3amc****</p>
+                <p class="review-card__text">주변에 지인들에게 소개해줘도 좋을 만큼<br />믿고 진행하셔도 될 것 같습니다 ~잘 사용하겠습니다 ~</p>
+              </li>
+            </ul>
+          </div>
+          <div class="marquee reviews__row" data-marquee data-direction="right" data-speed="36" data-start="0.35" data-hover-pause>
+            <ul class="marquee__track">
+              <li class="review-card">
+                <p class="review-card__stars"><span aria-label="별점 5점">★★★★★</span><span>5.0</span></p>
+                <p class="review-card__meta">스마트 스토어 주문 | deal****</p>
+                <p class="review-card__text">주변에 지인들에게 소개해줘도 좋을 만큼<br />믿고 진행하셔도 될 것 같습니다 ~ 잘 사용하겠습니다 ~</p>
+              </li>
+              <li class="review-card">
+                <p class="review-card__stars"><span aria-label="별점 5점">★★★★★</span><span>5.0</span></p>
+                <p class="review-card__meta">스마트 스토어 주문 | deal****</p>
+                <p class="review-card__text">문의 피드백도 정말 빠르고 아주 친절하게<br />응대해주셔서 시작부터 기분이 좋았습니다.</p>
+              </li>
+              <li class="review-card">
+                <p class="review-card__stars"><span aria-label="별점 5점">★★★★★</span><span>5.0</span></p>
+                <p class="review-card__meta">스마트 스토어 주문 | theb******</p>
+                <p class="review-card__text">여러군데서 비교해보고 페이앤밴으로 결정했는데<br />친절하게 안내전화도 여러번 실수 안하도록 주셨어요</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 04 제품 고르기 =====================
+           위: 제품 카드 3장 (옆으로 넘기거나 눌러서 선택)
+           아래: 고른 제품의 기능 슬라이드 3장 (업오더 3 · 티오더 3 · KT 하이오더 3) -->
+      <section class="picker section" id="picker" aria-labelledby="picker-title" data-picker>
+        <div class="container">
+          <h2 class="picker__title" id="picker-title" data-reveal>
+            그럼 우리 매장에는<br />어떤 <span class="text-red">테이블오더</span>가 맞을까요?
+          </h2>
+          <p class="picker__sub" data-reveal style="--delay: 0.1s">제품별 특징 비교하고 딱 맞는 기기로 골라요</p>
+        </div>
+
+        <div class="picker__cards" role="tablist" aria-label="테이블오더 제품" data-picker-track>
+          <button class="product-card product-card--uporder" type="button" role="tab" aria-selected="false" aria-controls="feat-uporder" data-product="uporder">
+            <span class="product-card__logo product-card__logo--imu">
+              <img src="assets/images/logo-imu.webp" width="240" height="118" alt="" />UP오더
+            </span>
+            <img class="product-card__img" src="assets/images/picker/uporder.webp" width="676" height="788" alt="" loading="lazy" />
+            <span class="sr-only">업오더</span>
+          </button>
+          <button class="product-card product-card--torder" type="button" role="tab" aria-selected="true" aria-controls="feat-torder" data-product="torder">
+            <span class="product-card__logo product-card__logo--torder">
+              <img src="assets/images/logo-torder.webp" width="420" height="93" alt="" />
+            </span>
+            <img class="product-card__img" src="assets/images/picker/torder.webp" width="808" height="778" alt="" loading="lazy" />
+            <span class="sr-only">티오더</span>
+          </button>
+          <button class="product-card product-card--hiorder" type="button" role="tab" aria-selected="false" aria-controls="feat-hiorder" data-product="hiorder">
+            <img class="product-card__img" src="assets/images/picker/hiorder.webp" width="272" height="276" alt="" loading="lazy" />
+            <span class="product-card__logo product-card__logo--kt">
+              <img src="assets/images/logo-kt.webp" width="120" height="98" alt="" />하이오더
+            </span>
+            <span class="sr-only">KT 하이오더</span>
+          </button>
+        </div>
+
+        <!-- 기능 슬라이드: 칩을 누르거나 좌우로 넘기면 바뀌고, 화면에 보이는 동안 자동으로 넘어갑니다 -->
+        <div class="features">
+          <!-- 업오더 -->
+          <div class="feat" id="feat-uporder" role="tabpanel" aria-label="업오더 기능" data-feat="uporder" style="--brand: #da291c" hidden>
+            <div class="feat__col">
+              <div class="feat__chips" role="tablist" aria-label="업오더 기능">
+                <button class="feat__chip" type="button" role="tab" data-go="0">포스 모니터링</button>
+                <button class="feat__chip" type="button" role="tab" data-go="1">QR리뷰 요청</button>
+                <button class="feat__chip" type="button" role="tab" data-go="2">예약석 안내</button>
+                <span class="feat__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              </div>
+              <div class="feat__viewport" data-feat-viewport>
+                <div class="feat__track" data-feat-track>
+                  <article class="feat__slide">
+                    <p class="feat__desc">포스 모니터링 메뉴에서 전체 태블릿을 관리할 수 있어요.<br class="br-d" /> 배터리 정보 확인, 슬립모드, 재실행까지 한번에</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/uporder-1.webp" width="1226" height="656" alt="업오더 포스 모니터링 화면" loading="lazy" />
+                      <p class="bubble bubble--grey bubble--tl feat__tip" style="--tx: 385; --ty: 289; --tw: 181">포스기 에서 한번에<br />관리할 수는 없을까요?</p>
+                    </div>
+                  </article>
+                  <article class="feat__slide">
+                    <p class="feat__desc">영수증 가져다 주지 마세요! 간단하게 손님이 앉아계신<br class="br-d" /> 자리에서 자연스럽게 네이버 리뷰 작성까지</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/uporder-2.webp" width="1206" height="644" alt="업오더 QR 리뷰 요청 화면" loading="lazy" />
+                      <p class="bubble bubble--grey bubble--tr feat__tip" style="--tx: 59; --ty: 286; --tw: 187">리뷰 요청을 자연스럽게<br />할 수는 없을까요?</p>
+                    </div>
+                  </article>
+                  <article class="feat__slide">
+                    <p class="feat__desc">예약 자리에 손님 올 때마다 예약석이라고 알리러 가셨다면?<br class="br-d" /> 이제는 테이블오더로 깔끔하게 관리해보세요!</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/uporder-3.webp" width="1222" height="652" alt="업오더 예약석 안내 화면" loading="lazy" />
+                      <p class="bubble bubble--grey bubble--tc feat__tip" style="--tx: 195; --ty: 287; --tw: 200">포스기에서 예약석 설정이<br />가능했으면 좋겠어요</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 티오더 (1·2번은 영상) -->
+          <div class="feat" id="feat-torder" role="tabpanel" aria-label="티오더 기능" data-feat="torder" style="--brand: #ff193f">
+            <div class="feat__col">
+              <div class="feat__chips" role="tablist" aria-label="티오더 기능">
+                <button class="feat__chip" type="button" role="tab" data-go="0">미니멀 디자인</button>
+                <button class="feat__chip" type="button" role="tab" data-go="1">티오더AI</button>
+                <button class="feat__chip" type="button" role="tab" data-go="2">1/N 결제</button>
+                <span class="feat__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              </div>
+              <div class="feat__viewport" data-feat-viewport>
+                <div class="feat__track" data-feat-track>
+                  <article class="feat__slide">
+                    <p class="feat__desc">티오더 프로는 타공이 없고 무선 배터리를 이용해<br class="br-d" /> 더욱 깔끔하고 예쁜 배치가 가능해요.</p>
+                    <div class="feat__media">
+                      <!-- 영상 교체: assets/videos/README.md -->
+                      <video muted playsinline loop preload="none" poster="assets/images/features/torder-1.webp" data-feat-video aria-label="티오더 프로 무선 배터리 장착 영상">
+                        <source src="assets/videos/torder-battery.webm?v=1" type="video/webm" />
+                        <source src="assets/videos/torder-battery.mp4?v=1" type="video/mp4" />
+                      </video>
+                      <p class="bubble bubble--white bubble--tl feat__tip" style="--tx: 388; --ty: 288; --tw: 187">선이 많은 건 싫어요.<br />디자인이 예뻤으면 해요</p>
+                    </div>
+                  </article>
+                  <article class="feat__slide">
+                    <p class="feat__desc">티오더 프로는 타공이 없고 무선 배터리를 이용해<br class="br-d" /> 더욱 깔끔하고 예쁜 배치가 가능해요.</p>
+                    <div class="feat__media">
+                      <video muted playsinline loop preload="none" poster="assets/images/features/torder-2.webp" data-feat-video aria-label="티오더AI 주문 화면 영상">
+                        <source src="assets/videos/torder-ai.webm?v=1" type="video/webm" />
+                        <source src="assets/videos/torder-ai.mp4?v=1" type="video/mp4" />
+                      </video>
+                      <p class="bubble bubble--white bubble--tr feat__tip" style="--tx: 59; --ty: 286; --tw: 200">제가 사용할 때<br />어렵지 않았으면 좋겠어요</p>
+                    </div>
+                  </article>
+                  <article class="feat__slide">
+                    <p class="feat__desc">요즘 필수적인 기능이죠! 자기가 먹은 메뉴는<br class="br-d" /> 자기가 결제할 수 있게 만들었어요</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/torder-3.webp" width="1222" height="652" alt="티오더 1/N 결제 화면" loading="lazy" />
+                      <p class="bubble bubble--white bubble--tl feat__tip" style="--tx: 276; --ty: 287; --tw: 229">요즘은 분할 결제가 기본인데<br />테이블에서 바로 할 수 없나요?</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KT 하이오더 -->
+          <div class="feat" id="feat-hiorder" role="tabpanel" aria-label="KT 하이오더 기능" data-feat="hiorder" style="--brand: #fe2e36" hidden>
+            <div class="feat__col">
+              <div class="feat__chips" role="tablist" aria-label="KT 하이오더 기능">
+                <button class="feat__chip" type="button" role="tab" data-go="0">KT 직접관리</button>
+                <button class="feat__chip" type="button" role="tab" data-go="1">깔끔한 디자인</button>
+                <button class="feat__chip" type="button" role="tab" data-go="2">올인원 앱</button>
+                <span class="feat__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              </div>
+              <div class="feat__viewport" data-feat-viewport>
+                <div class="feat__track" data-feat-track>
+                  <article class="feat__slide">
+                    <p class="feat__desc">전국 어디라도, 하이오더는 각 지역의 KT에서<br class="br-d" /> 설치부터 A/S까지 바로 관리할 수 있어요.</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/hiorder-1.webp" width="1226" height="656" alt="KT 하이오더 메뉴 화면과 캐릭터" loading="lazy" />
+                      <p class="bubble bubble--grey bubble--tl feat__tip" style="--tx: 385; --ty: 289; --tw: 187">서비스와 관리의 품질이<br />보장되었으면 좋겠어요</p>
+                    </div>
+                  </article>
+                  <article class="feat__slide">
+                    <p class="feat__desc">설치 환경에 따라 다양한 방법으로 설치할 수 있어<br class="br-d" /> 설치 기사님들이 매장에 딱 맞는 디자인으로 추천해드립니다</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/hiorder-2.webp" width="1206" height="644" alt="매장 테이블에 설치된 KT 하이오더" loading="lazy" />
+                    </div>
+                  </article>
+                  <article class="feat__slide">
+                    <p class="feat__desc">휴대폰에 앱하나만 깔면 메뉴 품절부터 수량변경<br class="br-d" /> 테이블오더 관리를 어디서든 편하게 할 수 있어요!</p>
+                    <div class="feat__media">
+                      <img src="assets/images/features/hiorder-3.webp" width="1206" height="644" alt="KT 하이오더 매장 관리 앱 화면" loading="lazy" />
+                      <p class="bubble bubble--grey bubble--tc feat__tip" style="--tx: 213; --ty: 297; --tw: 177">장소에 구애 받지 않고<br />편하게 관리할래요</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 12 상담 신청 + 추가 상품 ===================== -->
+      <section class="apply section" id="apply" aria-labelledby="apply-title">
+        <div class="container">
+          <h2 class="apply__title" id="apply-title" data-reveal>
+            지금 바로 <span class="text-red">페이앤밴</span>에서<br />상담받아보세요!
+          </h2>
+
+          <!-- 상담 신청 폼 → Google Apps Script → 구글 시트 + 슬랙 (설정: docs/form-setup.md) -->
+          <form class="apply-form" id="apply-form" data-apply-form novalidate data-reveal>
+            <!-- STEP 1·2 : 매장 상태 / 테이블오더 / 휴대폰 / 업종 -->
+            <div class="apply-form__panel" data-panel="info">
+              <h3 class="apply-form__title" data-title aria-live="polite">상담을 위해<br />전화번호를 입력해주세요</h3>
+
+              <div class="seg" role="radiogroup" aria-label="매장 상태" data-seg>
+                <span class="seg__thumb" aria-hidden="true"></span>
+                <label class="choice"><input type="radio" name="storeStatus" value="신규 매장 준비중" checked /><span>신규 매장 준비중</span></label>
+                <label class="choice"><input type="radio" name="storeStatus" value="매장 운영 중" /><span>매장 운영 중</span></label>
+              </div>
+
+              <!-- 신청할 테이블오더 (CONFIG.TABLE_ORDERS 로 버튼을 만듭니다) -->
+              <div class="order-pick" data-field="tableOrder">
+                <p class="order-pick__label" id="order-pick-label">어떤 테이블오더를 신청하시나요?</p>
+                <div class="seg seg--3 is-empty" role="radiogroup" aria-labelledby="order-pick-label" data-seg data-table-order></div>
+                <p class="field__error" data-error="tableOrder" role="alert"></p>
+              </div>
+
+              <div class="collapse" data-industry-wrap>
+                <div>
+                  <label class="field field--select" data-field="industry">
+                    <span class="sr-only">업종</span>
+                    <select class="field__control" name="industry" required data-industry>
+                      <option value="" disabled selected>업종선택</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <label class="field" data-field="phone">
+                <span class="sr-only">휴대폰 번호</span>
+                <input
+                  class="field__control field__control--fill"
+                  type="tel"
+                  name="phone"
+                  inputmode="numeric"
+                  autocomplete="tel-national"
+                  placeholder="휴대폰 번호"
+                  maxlength="13"
+                  required
+                  data-phone
+                />
+              </label>
+              <p class="field__error" data-error="phone" role="alert"></p>
+            </div>
+
+            <!-- STEP 3 : 연락 희망 시간 -->
+            <div class="apply-form__panel" data-panel="time" hidden>
+              <button class="apply-form__back" type="button" data-back>이전</button>
+              <h3 class="apply-form__title">마지막으로<br />연락 가능한 시간이 있으신가요?</h3>
+
+              <div class="seg" role="radiogroup" aria-label="연락 희망일" data-seg>
+                <span class="seg__thumb" aria-hidden="true"></span>
+                <!-- 주말·공휴일을 건너뛴 가까운 영업일 2개가 들어갑니다 (예: 금요일엔 금요일/월요일, 주말엔 월요일/화요일) -->
+                <label class="choice"><input type="radio" name="contactDay" value="오늘" data-day-slot="0" checked /><span data-day-label>오늘</span></label>
+                <label class="choice"><input type="radio" name="contactDay" value="내일" data-day-slot="1" /><span data-day-label>내일</span></label>
+              </div>
+
+              <div class="apply-form__panel" role="radiogroup" aria-label="연락 희망 시간">
+                <label class="choice"><input type="radio" name="contactTime" value="언제든 가능" /><span>언제든 가능</span></label>
+                <div class="time-grid" data-time-grid></div>
+              </div>
+
+              <div class="consent">
+                <label class="consent__label">
+                  <input class="sr-only" type="checkbox" name="consent" data-consent />
+                  <span class="consent__box" aria-hidden="true"></span>
+                  <span>[필수] 개인정보 수집·이용 동의</span>
+                </label>
+                <button class="consent__more" type="button" aria-expanded="false" aria-controls="consent-detail" data-consent-toggle>보기</button>
+              </div>
+              <!-- 개인정보 처리 문구: 실제 운영 정책에 맞게 꼭 확인/수정하세요 -->
+              <dl class="consent__detail" id="consent-detail" hidden>
+                <dt>수집 항목</dt>
+                <dd>휴대폰 번호, 매장 상태, 신청 테이블오더, 업종, 연락 희망 시간</dd>
+                <dt>이용 목적</dt>
+                <dd>테이블오더 렌탈 상담 및 안내 연락</dd>
+                <dt>보유 기간</dt>
+                <dd>상담 완료 후 1년 (관계 법령에 따라 보관이 필요한 경우 해당 기간)</dd>
+                <dd>동의를 거부할 수 있으며, 거부 시 상담 신청이 제한됩니다.</dd>
+              </dl>
+
+              <button class="btn-primary" type="submit" data-submit disabled>상담 신청하기</button>
+            </div>
+
+            <!-- 완료 -->
+            <div class="apply-form__panel apply-done" data-panel="done" tabindex="-1" hidden>
+              <svg class="apply-done__icon" viewBox="0 0 72 72" aria-hidden="true">
+                <circle cx="36" cy="36" r="33" fill="none" stroke="#3182F6" stroke-width="4" />
+                <path d="M23 37.5l9 9L50 28" fill="none" stroke="#3182F6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <h3 class="apply-form__title">상담 신청이 완료됐어요</h3>
+              <p class="apply-done__desc">선택하신 시간에 맞춰<br />담당 매니저가 연락드릴게요.</p>
+              <dl class="apply-done__summary" data-summary></dl>
+              <p class="apply-done__note" data-test-note hidden>
+                테스트 모드: 접수 주소(FORM_ENDPOINT)가 아직 설정되지 않아 실제로 전송되지 않았어요.
+              </p>
+            </div>
+
+            <!-- 스팸 방지 (사람에게는 보이지 않는 칸) -->
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          </form>
+
+          <!-- 함께 보면 좋은 상품 (링크는 js/config.js 의 LINKS) -->
+          <div class="extras">
+            <a class="extra extra--pos" href="https://poss-rental.netlify.app/" target="_blank" rel="noopener" data-extra-link="poss" data-reveal>
+              <span class="extra__card">
+                <span class="extra__eyebrow">구매는 부담스럽고 신경 쓰기는 귀찮을 때</span>
+                <strong class="extra__title">포스기 <span class="text-blue">월 비용 면제</span> 세트</strong>
+                <span class="extra__zero">
+                  <span class="extra__zero-box"><span>월 이용료</span><b>0원~</b></span>
+                  <span class="extra__zero-box"><span>폐업 시 위약금</span><b>0원</b></span>
+                </span>
+                <img class="extra__pos-img" src="assets/images/apply/pos-set.webp" width="1000" height="500" alt="윈도우 포스, 금전함, 토스 프론트, 토스 터미널 세트" loading="lazy" />
+              </span>
+              <span class="extra__btn extra__btn--blue">세트 상품 더 보러가기</span>
+            </a>
+
+            <a class="extra extra--net" href="https://bejewelled-begonia-20c94c.netlify.app/" target="_blank" rel="noopener" data-extra-link="internet" data-reveal style="--delay: 0.1s">
+              <span class="extra__card">
+                <span class="extra__eyebrow">인터넷,전화,CCTV 언제 다 알아보죠?</span>
+                <strong class="extra__title">페이앤밴 <span class="text-red">시크릿 페이백</span></strong>
+                <span class="extra__net-imgs" aria-hidden="true">
+                  <img class="extra__router" src="assets/images/apply/router.webp" width="540" height="540" alt="" loading="lazy" />
+                  <img class="extra__phone" src="assets/images/apply/phone.webp" width="540" height="540" alt="" loading="lazy" />
+                  <img class="extra__cctv" src="assets/images/apply/cctv.webp" width="540" height="540" alt="" loading="lazy" />
+                  <span class="extra__badge">
+                    <span class="extra__plus"><img src="assets/icons/plus.svg" alt="" width="10" height="10" /></span>
+                    <span class="extra__badge-box"><small>최대</small><b>82만원</b><span class="extra__money"><img class="extra__money-a" src="assets/icons/money-bag-a.svg" alt="" /><img class="extra__money-b" src="assets/icons/money-bag-b.svg" alt="" /></span></span>
+                  </span>
+                </span>
+                <span class="sr-only">인터넷, 전화, CCTV 설치 시 최대 82만원 페이백</span>
+              </span>
+              <span class="extra__btn extra__btn--red"><span>인터넷 <b>통신사 3사 견적 비교</b>해보기</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <img class="footer__logo" src="assets/icons/logo-paydv-mono.svg" width="81" height="17" alt="PAYDV" />
+
+        <!-- TODO: 약관 페이지가 준비되면 href 를 실제 주소로 바꾸고 data-pending 을 지워주세요 -->
+        <nav class="footer__links" aria-label="약관 및 정책">
+          <a href="#" data-pending>이용약관</a>
+          <a href="#" data-pending class="is-strong">개인정보처리방침</a>
+          <a href="#" data-pending>이메일무단수집거부</a>
+        </nav>
+
+        <div class="footer__info">
+          <p><span>(주)미르네프로</span><span>대표자 안형권</span><span class="footer__wrap">사업자등록번호 726-81-00834</span></p>
+          <p>대구 중구 동덕로 167 (동인동2가) KT 본관 11층</p>
+          <p>대표전화 <a href="tel:15770115">1577-0115</a></p>
+        </div>
+
+        <p class="footer__copy">COPYRIGHT(C) 2026 BY PAYNVAN ALL RIGHTS RESERVED.</p>
+        <p class="footer__notice">이 페이지에는 토스팀에서 제공한 토스페이스가 적용되어 있습니다.</p>
+      </div>
+    </footer>
+
+    <!-- 하단 고정 상담 버튼: 누르면 아래 신청 창이 열립니다 -->
+    <div class="floating-cta" data-floating-cta>
+      <a class="floating-cta__btn" href="#apply" data-cta data-sheet-open>무료 상담 신청하기</a>
+    </div>
+
+    <!-- 신청 창: 휴대폰은 아래에서 올라오는 창, 데스크톱은 가운데 창 (js/modules/apply-sheet.js)
+         폼을 따로 두지 않고, 열 때 페이지의 신청 폼(#apply-form)을 이 안으로 옮겨왔다가 닫으면 제자리로 돌려놓습니다 -->
+    <dialog class="sheet" aria-label="무료 상담 신청" data-apply-sheet>
+      <div class="sheet__head" data-sheet-grab>
+        <span class="sheet__handle" aria-hidden="true"></span>
+        <button class="sheet__close" type="button" aria-label="닫기" data-sheet-close>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <div class="sheet__body" data-sheet-body></div>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+    <!-- TODO(오픈 전): 네이버 공통 스크립트(wcslog.js)를 여기에 넣어주세요 (connect-rental 의 index.html 맨 아래와 같은 모양).
+         넣으면 신청이 실제로 접수된 순간 js/modules/analytics.js 가 wcs.trans({ type: "lead" }) 전환을 보냅니다. -->
+  </body>
+</html>

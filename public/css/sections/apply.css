@@ -1,0 +1,308 @@
+/* =========================================================
+   12 상담 신청 + 함께 보면 좋은 상품 2개 (포스기 세트 / 인터넷 견적)
+   상품 카드 안쪽은 카드 폭(원본 376.72) 기준으로 줄어듭니다 (--bu)
+   ========================================================= */
+.apply {
+  padding: calc(142 * var(--u)) 0 calc(161 * var(--u));
+  background: #f3f4f6;
+}
+
+.apply__title {
+  font-weight: 800;
+  font-size: max(26px, calc(48 * var(--u)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-align: center;
+}
+
+.apply .apply-form {
+  margin-top: calc(60 * var(--u));
+}
+
+/* ---------- 신청할 테이블오더 선택 (3개 중 하나) ---------- */
+.order-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-pick__label {
+  font-weight: 700;
+  font-size: max(14px, calc(18 * var(--u)));
+  letter-spacing: -0.02em;
+  color: var(--ink-sub);
+}
+
+/* 아직 아무것도 고르지 않았을 때는 흰색 썸을 숨깁니다 */
+.seg.is-empty .seg__thumb {
+  opacity: 0;
+}
+
+.order-pick.is-invalid .seg {
+  box-shadow: inset 0 0 0 1px #f04452;
+}
+
+.order-pick .field__error:empty {
+  display: none;
+}
+
+/* ---------- 함께 보면 좋은 상품 ---------- */
+.extras {
+  display: grid;
+  grid-template-columns: repeat(2, calc(376.72 * var(--u)));
+  justify-content: center;
+  gap: calc(21.4 * var(--u));
+  margin-top: calc(18 * var(--u));
+}
+
+.extra {
+  --bu: calc(100cqw / 376.72);
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+.extra__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(450.3 * var(--bu));
+  padding-top: calc(41.2 * var(--bu));
+  border-radius: calc(11.77 * var(--bu)) calc(11.77 * var(--bu)) 0 0;
+  background: #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.extra__eyebrow {
+  font-weight: 600;
+  font-size: calc(16 * var(--bu));
+  letter-spacing: -0.02em;
+  color: var(--grey-600);
+}
+
+.extra__title {
+  margin-top: calc(7.85 * var(--bu));
+  font-weight: 800;
+  font-size: calc(32 * var(--bu));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--grey-800);
+}
+
+.extra__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(59.35 * var(--bu));
+  min-height: 48px;
+  border-radius: calc(11.77 * var(--bu));
+  font-weight: 700;
+  font-size: max(14px, calc(15.7 * var(--bu)));
+  letter-spacing: -0.02em;
+  color: #fff;
+  transition:
+    filter 0.2s,
+    scale 0.15s var(--ease-out);
+}
+
+.extra__btn b {
+  font-weight: 800;
+}
+
+.extra__btn--blue {
+  background: var(--blue-500);
+}
+
+.extra__btn--red {
+  background: var(--red);
+}
+
+.extra:hover .extra__btn {
+  filter: brightness(1.06);
+}
+
+.extra:active .extra__btn {
+  scale: 0.98;
+}
+
+/* 포스기 세트: 월 이용료 / 폐업 시 위약금 0원 */
+.extra__zero {
+  display: flex;
+  gap: calc(7.85 * var(--bu));
+  margin-top: calc(18.64 * var(--bu));
+}
+
+.extra__zero-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(4.9 * var(--bu));
+  width: calc(155 * var(--bu));
+  height: calc(138.33 * var(--bu));
+  border: 0.5px solid rgb(232 243 255 / 0.6);
+  border-radius: calc(11.77 * var(--bu));
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgb(69 147 252 / 0.2), rgb(144 194 255 / 0) 70%),
+    radial-gradient(50% 50% at 50% 94%, rgb(69 147 252 / 0.2), rgb(144 194 255 / 0) 100%),
+    #e8f3ff;
+}
+
+.extra__zero-box span {
+  font-weight: 700;
+  font-size: calc(20 * var(--bu));
+  color: var(--blue-500);
+}
+
+.extra__zero-box b {
+  font-weight: 800;
+  font-size: calc(40 * var(--bu));
+  line-height: 1.2;
+  background: linear-gradient(to bottom, #c9e2ff, #3182f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.extra__pos-img {
+  position: absolute;
+  left: calc(-50.52 * var(--bu));
+  top: calc(222.2 * var(--bu));
+  width: calc(496.41 * var(--bu));
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+/* 시크릿 페이백: 공유기 · 전화기 · CCTV */
+.extra__net-imgs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.extra__net-imgs img {
+  position: absolute;
+  height: auto;
+}
+
+.extra__router {
+  left: calc(47.89 * var(--bu));
+  top: calc(93.83 * var(--bu));
+  width: calc(269 * var(--bu));
+}
+
+.extra__phone {
+  left: calc(126.89 * var(--bu));
+  top: calc(207.83 * var(--bu));
+  width: calc(224 * var(--bu));
+}
+
+.extra__cctv {
+  left: calc(7.89 * var(--bu));
+  top: calc(221.83 * var(--bu));
+  width: calc(195 * var(--bu));
+}
+
+.extra__badge {
+  position: absolute;
+  left: calc(218.89 * var(--bu));
+  top: calc(179.83 * var(--bu));
+  animation: badge-bob 3.2s var(--ease-in-out) infinite;
+}
+
+@keyframes badge-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 calc(-5 * var(--bu));
+  }
+}
+
+.extra__plus {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: calc(7.87 * var(--bu));
+  display: grid;
+  place-items: center;
+  width: calc(18.61 * var(--bu));
+  height: calc(18.61 * var(--bu));
+  border-radius: 50%;
+  background: #fecdce;
+}
+
+.extra__plus img {
+  position: static !important;
+  width: 55.6%;
+}
+
+.extra__badge-box {
+  position: absolute;
+  left: calc(12.89 * var(--bu));
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(1.43 * var(--bu));
+  width: calc(113.11 * var(--bu));
+  height: calc(35.08 * var(--bu));
+  border-radius: calc(5.73 * var(--bu));
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 4px 12px rgb(254 46 54 / 0.3);
+}
+
+.extra__badge-box small {
+  font-weight: 600;
+  font-size: calc(10.74 * var(--bu));
+}
+
+.extra__badge-box b {
+  font-weight: 700;
+  font-size: calc(17.18 * var(--bu));
+}
+
+.extra__money {
+  position: relative;
+  width: calc(15 * var(--bu));
+  height: calc(15 * var(--bu));
+}
+
+.extra__money img {
+  position: absolute !important;
+}
+
+.extra__money-a {
+  inset: 3.52% 3.75%;
+  width: 92.5% !important;
+}
+
+.extra__money-b {
+  inset: 40.02% 36.17% 15.18% 36.5%;
+  width: 27.33% !important;
+}
+
+/* ---------- 휴대폰: 한 줄에 하나씩 ---------- */
+@media (max-width: 599px) {
+  .extras {
+    grid-template-columns: min(100%, 420px);
+    gap: 16px;
+    padding-inline: var(--gutter);
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 861px) {
+  .apply {
+    padding-bottom: 120px;
+  }
+}

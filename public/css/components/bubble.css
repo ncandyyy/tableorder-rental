@@ -1,0 +1,93 @@
+/* =========================================================
+   말풍선 (피그마 Tooltip 컴포넌트)
+   - 꼬리 모양은 피그마에서 내려받은 SVG 를 그대로 씁니다.
+   - bubble--bl / --br : 아래 왼쪽 / 아래 오른쪽 꼬리 (01 문제 공감 카드)
+   - bubble--tl / --tr / --tc : 위 왼쪽 / 위 오른쪽 / 위 가운데 꼬리 (04 기능 슬라이드)
+   - 색: bubble--dark (진회색 바탕 + 빨간 글자) / --grey / --white
+   ========================================================= */
+.bubble {
+  --bubble-bg: #f3f4f6;
+  --tail-w: calc(89.68 * var(--bu, var(--u)));
+  --tail-h: calc(58.39 * var(--bu, var(--u)));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(54 * var(--bu, var(--u)));
+  padding: calc(12 * var(--bu, var(--u))) calc(22 * var(--bu, var(--u)));
+  border-radius: calc(18 * var(--bu, var(--u)));
+  background: var(--bubble-bg);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+  isolation: isolate;
+}
+
+/* 꼬리: 말풍선 뒤에 깔린 SVG (피그마와 같은 겹침) */
+.bubble::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: var(--tail-w);
+  height: var(--tail-h);
+  background: var(--tail) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.bubble--bl::before {
+  left: 0;
+  bottom: calc(var(--tail-h) * -1 + 49 * var(--bu, var(--u)));
+  --tail: url("../../assets/icons/bubble-tail-bl.svg");
+}
+
+.bubble--br::before {
+  right: 0;
+  bottom: calc(var(--tail-h) * -1 + 49 * var(--bu, var(--u)));
+  --tail: url("../../assets/icons/bubble-tail-br.svg");
+}
+
+.bubble--tl::before {
+  left: 0;
+  top: calc(var(--tail-h) * -1 + 48 * var(--bu, var(--u)));
+  --tail: url("../../assets/icons/tip-tail-tl-grey.svg");
+}
+
+.bubble--tr::before {
+  right: 0;
+  top: calc(var(--tail-h) * -1 + 48 * var(--bu, var(--u)));
+  --tail: url("../../assets/icons/tip-tail-tr-grey.svg");
+}
+
+.bubble--tc::before {
+  --tail-w: calc(38.74 * var(--bu, var(--u)));
+  --tail-h: calc(12 * var(--bu, var(--u)));
+  left: 50%;
+  top: calc(var(--tail-h) * -1 + 1px);
+  translate: -50% 0;
+  scale: 1 -1;
+  --tail: url("../../assets/icons/tip-tail-c-grey.svg");
+}
+
+.bubble--white {
+  --bubble-bg: #fcfcfe;
+}
+
+.bubble--white.bubble--tl::before {
+  --tail: url("../../assets/icons/tip-tail-tl-white.svg");
+}
+
+.bubble--white.bubble--tr::before {
+  --tail: url("../../assets/icons/tip-tail-tr-white.svg");
+}
+
+.bubble--dark {
+  --bubble-bg: var(--ink);
+  color: var(--red);
+}
+
+.bubble--grey,
+.bubble--white {
+  color: var(--ink);
+}
