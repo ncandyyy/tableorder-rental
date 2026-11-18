@@ -201,7 +201,7 @@
 @media (max-width: 599px) {
   .hero__stage {
     height: auto;
-    padding: 52px 0 44px;
+    padding: 48px 0 52px;
   }
 
   .hero__eyebrow,
@@ -230,7 +230,7 @@
   }
 
   .hero__product--torder {
-    margin-top: 56px;
+    margin-top: 44px;
   }
 
   .hero__float {
@@ -309,15 +309,19 @@
   }
 
   /* 하이오더: 사진 오른쪽, 설명 왼쪽, 라벨 아래 */
+  /* 하이오더·업오더 사진은 위아래·옆에 투명한 여백이 있어 그만큼 당겨서 간격을 고르게 맞춥니다 */
+  .hero__product--hiorder {
+    margin-top: 40px;
+  }
+
   .hero__product--hiorder .hero__device {
-    width: 70%;
-    margin-left: auto;
-    margin-right: 2%;
+    width: 72%;
+    margin: -7.8% 0 -5.4% auto;
   }
 
   .hero__product--hiorder .hero__callout {
     left: 4%;
-    top: 22%;
+    top: 18%;
   }
 
   .hero__product--hiorder .hero__pill {
@@ -327,28 +331,28 @@
 
   /* 업오더: 사진 왼쪽, 설명 오른쪽, 라벨 아래 왼쪽 */
   .hero__product--uporder {
-    margin-top: 52px;
+    margin-top: 44px;
   }
 
   .hero__product--uporder .hero__device {
-    width: 76%;
-    margin-left: 2%;
+    width: 80%;
+    margin: -6.7% 0 -6.7% -10%;
   }
 
   .hero__product--uporder .hero__callout {
     right: 4%;
-    top: 46%;
+    top: 38%;
   }
 
   .hero__product--uporder .hero__pill {
     left: 6%;
-    bottom: 2%;
+    bottom: -16px;
   }
 
   .hero__brand {
     position: static !important;
     display: block;
     width: 104px !important;
-    margin: 44px auto 0;
+    margin: 84px auto 0; /* 업오더 사진의 음수 여백(-6.7%)과 겹쳐서 실제 간격은 약 40px */
   }
 }
