@@ -144,6 +144,13 @@
   color: var(--ink);
 }
 
+/* 줄바꿈 없이 피그마처럼 두 줄 그대로 (좁은 화면에서는 카드가 글자만큼 살짝 넓어짐) */
+.hero__callout {
+  width: max-content;
+  min-width: calc(var(--w) * var(--u));
+  white-space: nowrap;
+}
+
 .hero__callout em {
   font-style: normal;
   color: var(--c);
@@ -194,165 +201,4 @@
   display: contents;
 }
 
-/* =========================================================
-   휴대폰: 피그마 배치 그대로 줄이면 설명 글자가 9px 까지 작아져서,
-   제품마다 한 묶음으로 쌓고 기기 사진은 조금 작게, 글자는 읽히는 크기(14px~)로 둡니다.
-   ========================================================= */
-@media (max-width: 599px) {
-  .hero__stage {
-    height: auto;
-    padding: 48px 0 52px;
-  }
-
-  .hero__eyebrow,
-  .hero__title {
-    position: static;
-    text-align: center;
-  }
-
-  .hero__eyebrow {
-    font-size: 15px;
-  }
-
-  .hero__title {
-    margin-top: 14px;
-    font-size: clamp(36px, 10.5vw, 44px);
-  }
-
-  .hero__line--red {
-    margin-inline: auto;
-  }
-
-  .hero__product {
-    position: relative;
-    display: block;
-    margin-top: 44px;
-  }
-
-  .hero__product--torder {
-    margin-top: 44px;
-  }
-
-  .hero__float {
-    position: relative;
-    inset: auto;
-  }
-
-  .hero__product .at {
-    position: absolute;
-    left: auto;
-    top: auto;
-    width: auto;
-  }
-
-  .hero__product .hero__device {
-    position: relative;
-    display: block;
-  }
-
-  .hero__pointer,
-  .hero__shadow,
-  .hero__stand-shadow {
-    display: none;
-  }
-
-  .hero__pill {
-    padding: 9px 16px;
-    font-size: 15px;
-    z-index: 2;
-  }
-
-  .hero__callout {
-    z-index: 3;
-    gap: 6px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    background: rgb(255 255 255 / 0.82);
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  .hero__callout-logo--torder {
-    width: 76px;
-  }
-
-  .hero__callout-brand--kt {
-    font-size: 17px;
-  }
-
-  .hero__callout-brand--kt img {
-    width: 20px;
-  }
-
-  .hero__callout-brand--imu {
-    font-size: 13px;
-  }
-
-  .hero__callout-brand--imu img {
-    width: 40px;
-  }
-
-  /* 티오더: 사진 왼쪽, 라벨 위 오른쪽, 설명 아래 오른쪽 */
-  .hero__product--torder .hero__device {
-    width: 70%;
-    margin-left: 4%;
-  }
-
-  .hero__product--torder .hero__pill {
-    top: -20px;
-    right: 8%;
-  }
-
-  .hero__product--torder .hero__callout {
-    right: 4%;
-    bottom: -18px;
-  }
-
-  /* 하이오더: 사진 오른쪽, 설명 왼쪽, 라벨 아래 */
-  /* 하이오더·업오더 사진은 위아래·옆에 투명한 여백이 있어 그만큼 당겨서 간격을 고르게 맞춥니다 */
-  .hero__product--hiorder {
-    margin-top: 40px;
-  }
-
-  .hero__product--hiorder .hero__device {
-    width: 72%;
-    margin: -7.8% 0 -5.4% auto;
-  }
-
-  .hero__product--hiorder .hero__callout {
-    left: 4%;
-    top: 18%;
-  }
-
-  .hero__product--hiorder .hero__pill {
-    right: 8%;
-    bottom: -14px;
-  }
-
-  /* 업오더: 사진 왼쪽, 설명 오른쪽, 라벨 아래 왼쪽 */
-  .hero__product--uporder {
-    margin-top: 44px;
-  }
-
-  .hero__product--uporder .hero__device {
-    width: 80%;
-    margin: -6.7% 0 -6.7% -10%;
-  }
-
-  .hero__product--uporder .hero__callout {
-    right: 4%;
-    top: 38%;
-  }
-
-  .hero__product--uporder .hero__pill {
-    left: 6%;
-    bottom: -16px;
-  }
-
-  .hero__brand {
-    position: static !important;
-    display: block;
-    width: 104px !important;
-    margin: 84px auto 0; /* 업오더 사진의 음수 여백(-6.7%)과 겹쳐서 실제 간격은 약 40px */
-  }
-}
+/* 휴대폰도 피그마 배치 그대로 비율만 줄입니다 (기기 사진 사이 간격 유지) */
