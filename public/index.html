@@ -44,6 +44,7 @@
     </script>
 
     <!-- styles: base → components → sections -->
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/base/tokens.css" />
     <link rel="stylesheet" href="css/base/reset.css" />
     <link rel="stylesheet" href="css/base/base.css" />
@@ -61,6 +62,8 @@
     <link rel="stylesheet" href="css/sections/apply.css" />
     <link rel="stylesheet" href="css/sections/footer.css" />
 
+    <!-- Swiper 11 (MIT, js/vendor/swiper.LICENSE.txt) — 휴대폰 문제 공감 카드 넘기기에 사용 -->
+    <script src="js/vendor/swiper-bundle.min.js" defer></script>
     <script type="module" src="js/main.js"></script>
   </head>
 
@@ -170,7 +173,8 @@
             </h2>
           </div>
 
-          <!-- 휴대폰에서는 옆으로 넘기는 카드 -->
+          <!-- 휴대폰에서는 Swiper 로 옆으로 넘기는 카드 (js/modules/pain-swiper.js) -->
+          <div class="pain__slider" data-pain-slider>
           <ul class="pain__grid">
             <li class="pain-card" style="--img-x: -3.59%; --img-y: 16.76%; --img-w: 106.99%; --fade: 27.7%, 72.85%" data-reveal>
               <img class="pain-card__bg" src="assets/images/pain/card-1.webp" width="760" height="760" alt="" loading="lazy" />
@@ -217,6 +221,8 @@
               </div>
             </li>
           </ul>
+            <div class="pain__dots" aria-hidden="true"></div>
+          </div>
         </div>
       </section>
 

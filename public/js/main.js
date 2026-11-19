@@ -5,6 +5,7 @@
 import { initReveal } from "./modules/reveal.js";
 import { initMarquees } from "./modules/marquee.js";
 import { initCountUp } from "./modules/count-up.js";
+import { initPainSwiper } from "./modules/pain-swiper.js";
 import { initLineupTabs } from "./modules/lineup-tabs.js";
 import { initPicker } from "./modules/picker.js";
 import { initApplyForm } from "./modules/form.js";
@@ -20,6 +21,7 @@ function start() {
   initViewCounter();
   initMarquees();
   initCountUp();
+  initPainSwiper();
   initLineupTabs();
   initPicker();
   initApplyForm();

@@ -51,30 +51,28 @@
   text-underline-offset: 0.12em;
 }
 
-/* 줄마다 감싸서 이모지를 글자 바깥(양옆)에 붙입니다 — 글자는 가운데 그대로 */
+/* 이모지는 글자 흐름 안에 둡니다 — 폰 폭·글꼴이 달라도 글자와 겹치지 않음 */
 .pain__line {
-  position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .pain__emoji {
-  position: absolute;
+  display: inline-block;
   height: auto;
+  vertical-align: middle;
 }
 
-/* 첫 줄 끝 위쪽 🤬 (-13.48°), 둘째 줄 앞 🤦 (7.23°) */
+/* 첫 줄 끝 🤬 (살짝 위로, -13.48°), 둘째 줄 앞 🤦 (7.23°) */
 .pain__emoji--swear {
-  width: 1.15em;
-  right: -1.2em;
-  top: -0.55em;
+  width: 1.1em;
+  margin-left: 0.12em;
+  translate: 0 -0.35em;
   rotate: -13.48deg;
 }
 
 .pain__emoji--facepalm {
-  width: 1.05em;
-  left: -1.2em;
-  top: 50%;
-  translate: 0 -50%;
+  width: 1em;
+  margin-right: 0.12em;
   rotate: 7.23deg;
 }
 
@@ -222,30 +220,62 @@
   transition-delay: calc(var(--delay, 0s) + 0.85s);
 }
 
-/* ---------- 휴대폰: 옆으로 넘기는 카드 ---------- */
+/* ---------- 휴대폰: Swiper 로 넘기는 카드 (js/modules/pain-swiper.js) ---------- */
+.pain__dots {
+  display: none;
+}
+
 @media (max-width: 599px) {
-  .pain__grid {
-    display: flex;
-    gap: 12px;
-    justify-content: flex-start;
+  .pain__slider {
     margin-top: 36px;
-    padding: 4px 20px 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 20px;
-    scrollbar-width: none;
-    overscroll-behavior-x: contain;
+    padding: 4px 0 8px;
+    overflow: hidden;
   }
 
-  .pain__grid::-webkit-scrollbar {
-    display: none;
+  .pain__slider .pain__grid {
+    display: flex;
+    justify-content: flex-start; /* PC 그리드의 가운데 정렬이 남으면 Swiper 위치가 밀림 */
+    gap: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .pain-card {
     flex: none;
-    width: min(78vw, 320px);
-    scroll-snap-align: start;
+    width: min(80vw, 330px);
+    transition:
+      scale 0.45s var(--ease-out),
+      opacity 0.45s var(--ease-out);
   }
 
+  /* 가운데 카드만 또렷하게 */
+  .pain__slider.swiper-initialized .pain-card:not(.swiper-slide-active) {
+    scale: 0.93;
+    opacity: 0.6;
+  }
 
+  .pain__dots {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 18px;
+  }
+
+  .pain__dots .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    margin: 0 !important;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.35);
+    opacity: 1;
+    transition:
+      width 0.3s var(--ease-out),
+      background-color 0.3s;
+  }
+
+  .pain__dots .swiper-pagination-bullet-active {
+    width: 22px;
+    background: #fff;
+  }
 }
